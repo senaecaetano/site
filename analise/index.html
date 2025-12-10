@@ -1,19 +1,19 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Sena &amp; Caetano | Análise Técnica Inicial de Crédito</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>Sena & Caetano | Análise Técnica Inicial de Crédito</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
     :root {
-      --bg-body: #0b1120;
-      --bg-card: #020617;
+      --bg-page: #f3f4f6;
+      --bg-card: #ffffff;
       --accent: #1d4ed8;
-      --accent-soft: #1e40af;
-      --text-main: #e5e7eb;
-      --text-muted: #9ca3af;
-      --border-soft: #111827;
+      --accent-soft: #2563eb;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --border-soft: #e5e7eb;
     }
 
     * { box-sizing: border-box; }
@@ -21,7 +21,7 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #111827, #020617 55%);
+      background: var(--bg-page);
       color: var(--text-main);
       line-height: 1.6;
     }
@@ -34,7 +34,7 @@
 
     header {
       text-align: center;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
     }
 
     .logo-text {
@@ -49,17 +49,17 @@
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-top: 6px;
-      color: #f9fafb;
+      margin-top: 4px;
+      color: #111827;
     }
 
     .hero {
-      background: linear-gradient(135deg, #020617, #020617 50%, #0f172a);
+      background: var(--bg-card);
       border-radius: 18px;
       border: 1px solid var(--border-soft);
-      padding: 28px 22px 24px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-      margin-bottom: 28px;
+      padding: 24px 20px 20px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+      margin-bottom: 20px;
     }
 
     .hero-kicker {
@@ -67,45 +67,31 @@
       text-transform: uppercase;
       letter-spacing: 0.18em;
       color: var(--accent);
-      margin-bottom: 8px;
-    }
-
-    .hero h1 {
-      margin: 0 0 10px;
-      font-size: 26px;
-      line-height: 1.25;
-      color: #f9fafb;
-    }
-
-    .hero-sub {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin: 0 0 18px;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.9);
-      border: 1px solid rgba(55,65,81,0.7);
-      font-size: 11px;
-      color: #e5e7eb;
       margin-bottom: 6px;
     }
 
-    .hero-badge span {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: #22c55e;
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: 26px;
+      line-height: 1.25;
+      color: #111827;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin: 0 0 12px;
+    }
+
+    .hero-note {
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--text-muted);
     }
 
     .hero-cta {
       display: inline-block;
-      margin-top: 8px;
+      margin-top: 10px;
       padding: 10px 18px;
       border-radius: 999px;
       background: linear-gradient(135deg, var(--accent), var(--accent-soft));
@@ -119,25 +105,19 @@
 
     .hero-cta:hover { opacity: 0.96; }
 
-    .hero-note {
-      margin-top: 8px;
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
     section {
-      background: rgba(15,23,42,0.9);
+      background: var(--bg-card);
       border-radius: 18px;
       border: 1px solid var(--border-soft);
-      padding: 20px 18px 18px;
-      margin-bottom: 18px;
+      padding: 18px 18px 16px;
+      margin-bottom: 14px;
     }
 
     section h2 {
       margin-top: 0;
       font-size: 18px;
-      margin-bottom: 8px;
-      color: #e5e7eb;
+      margin-bottom: 6px;
+      color: #111827;
     }
 
     section p {
@@ -148,11 +128,11 @@
 
     ul {
       padding-left: 18px;
-      margin: 8px 0 0;
+      margin: 6px 0 0;
     }
 
     ul li {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-muted);
       margin-bottom: 4px;
     }
@@ -162,51 +142,51 @@
       text-transform: uppercase;
       letter-spacing: 0.18em;
       color: var(--text-muted);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .steps-list li { margin-bottom: 8px; }
-    .steps-list strong { color: #e5e7eb; }
+    .steps-list strong { color: #111827; }
 
     .faq-item { margin-bottom: 10px; }
     .faq-item strong {
       display: block;
       font-size: 13px;
-      color: #e5e7eb;
+      color: #111827;
     }
     .faq-item span {
       font-size: 13px;
       color: var(--text-muted);
     }
 
-    .form-section { margin-top: 24px; }
+    .form-section { margin-top: 18px; }
 
     .form-box {
-      margin-top: 10px;
+      margin-top: 8px;
       padding: 18px 16px 16px;
       border-radius: 16px;
-      background: #020617;
+      background: #f9fafb;
       border: 1px solid var(--border-soft);
     }
 
     .form-box h3 {
       margin: 0 0 6px;
       font-size: 16px;
-      color: #f9fafb;
+      color: #111827;
     }
 
     .form-box p {
-      margin: 0 0 16px;
+      margin: 0 0 12px;
       font-size: 13px;
       color: var(--text-muted);
     }
 
     label {
       display: block;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 600;
       margin-bottom: 4px;
-      color: #e5e7eb;
+      color: #111827;
     }
 
     input[type="text"],
@@ -215,9 +195,9 @@
       width: 100%;
       padding: 9px 10px;
       border-radius: 10px;
-      border: 1px solid #1f2937;
-      background: #020617;
-      color: #f9fafb;
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      color: #111827;
       font-size: 14px;
       margin-bottom: 10px;
     }
@@ -227,7 +207,7 @@
     input[type="tel"]:focus {
       outline: none;
       border-color: var(--accent);
-      box-shadow: 0 0 0 1px rgba(37,99,235,0.4);
+      box-shadow: 0 0 0 1px rgba(37,99,235,0.3);
     }
 
     button[type="submit"] {
@@ -240,9 +220,16 @@
       cursor: pointer;
       background: linear-gradient(135deg, var(--accent), var(--accent-soft));
       color: #f9fafb;
+      margin-top: 2px;
     }
 
     button[type="submit"]:hover { opacity: 0.96; }
+
+    .error-message {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #b91c1c;
+    }
 
     .disclaimer {
       margin-top: 8px;
@@ -275,15 +262,11 @@
     <main>
       <!-- HERO -->
       <div class="hero">
-        <div class="hero-badge">
-          <span></span>
-          Análise técnica inicial sem custo
-        </div>
         <div class="hero-kicker">Possibilidades de crédito com responsabilidade</div>
         <h1>Antes de decidir sobre suas dívidas, entenda sua situação técnica de crédito.</h1>
         <p class="hero-sub">
-          Uma leitura equivocada do seu CPF ou CNPJ pode fechar portas de crédito desnecessariamente.
-          Nossa análise técnica inicial ajuda você a enxergar o quadro real antes de qualquer decisão.
+          Nossa análise técnica inicial ajuda você a enxergar o quadro real do seu CPF ou CNPJ
+          antes de assumir qualquer acordo ou compromisso.
         </p>
         <a href="#formulario" class="hero-cta">Quero receber minha análise técnica inicial</a>
         <div class="hero-note">
@@ -298,7 +281,7 @@
         <p>
           Muitos consumidores aceitam acordos ou pagam valores que não compreendem totalmente,
           apenas por medo de “ficar para sempre sem crédito”. Falta informação técnica clara
-          sobre o que os birôs de crédito registraram e como isso deve ser interpretado.
+          sobre o que os birôs registraram e como isso deve ser interpretado.
         </p>
         <ul>
           <li>Registros desatualizados ou mal interpretados.</li>
@@ -334,36 +317,6 @@
         </ul>
       </section>
 
-      <!-- FAQ -->
-      <section>
-        <div class="badge-line">dúvidas comuns</div>
-        <h2>Algumas perguntas que recebemos com frequência.</h2>
-
-        <div class="faq-item">
-          <strong>Essa análise tem custo?</strong>
-          <span>
-            A análise técnica inicial não tem custo. Caso exista necessidade de serviços adicionais,
-            qualquer proposta é explicada previamente, sem obrigação de contratação.
-          </span>
-        </div>
-
-        <div class="faq-item">
-          <strong>Vocês fazem “limpa nome” ou atuam como escritório de advocacia?</strong>
-          <span>
-            Não. Atuamos como consultoria técnica financeira, intermediando informações e orientações
-            com base na legislação de consumo e nos dados de crédito disponíveis. Não prestamos serviços jurídicos.
-          </span>
-        </div>
-
-        <div class="faq-item">
-          <strong>Em quanto tempo recebo um retorno?</strong>
-          <span>
-            Após o envio do formulário, nossa equipe entra em contato o mais breve possível
-            para alinhar expectativas e explicar os próximos passos.
-          </span>
-        </div>
-      </section>
-
       <!-- FORMULÁRIO -->
       <section id="formulario" class="form-section">
         <div class="badge-line">próximo passo</div>
@@ -377,21 +330,20 @@
           <h3>Solicitar análise técnica inicial</h3>
           <p>Preencha os campos abaixo. Entraremos em contato pelo WhatsApp ou e-mail informado.</p>
 
-          <form method="POST" action="https://script.google.com/macros/s/AKfycbzdci47LmVIITkrym6qYtzQE8ayjWa7huPnZJ71ySS3304CFA3U8_NJuEFeHigv0bE4XA/exec
-">
+          <!-- ATENÇÃO: substitua AQUI pela URL /exec que o Apps Script mostrar na implantação -->
+          <form id="leadForm" method="POST" action="https://script.google.com/macros/s/AKfycbyBiuHX5iloagNn7u62lT6mfiEtAiNdrn-ZH2DGReLefxh9Wyutw2uPWprUjTgvpsdKQA/exec" onsubmit="return validarFormulario(event)">
             <label for="nome">Nome completo</label>
-            <input type="text" id="nome" name="nome" required>
+            <input type="text" id="nome" name="nome" required />
 
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required />
 
             <label for="whatsapp">WhatsApp (com DDD)</label>
-            <input type="tel" id="whatsapp" name="whatsapp" required>
-
-            <!-- indica ao Apps Script para onde redirecionar após salvar -->
-            <input type="hidden" name="redirect" value="https://senaecaetano.com.br/obrigado">
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="(61) 9 9999-9999" required />
 
             <button type="submit">Quero receber minha análise técnica</button>
+
+            <div id="form-error" class="error-message"></div>
 
             <div class="disclaimer">
               Ao enviar, você autoriza o contato da Sena &amp; Caetano para fins de
@@ -404,8 +356,41 @@
 
     <footer>
       Sena &amp; Caetano Consultoria Técnica Financeira · Atuação focada em orientação técnica e informação de crédito.
-    </footer>
   </div>
+
+  <script>
+    function validarFormulario(event) {
+      var emailInput    = document.getElementById('email');
+      var whatsappInput = document.getElementById('whatsapp');
+      var errorBox      = document.getElementById('form-error');
+
+      errorBox.textContent = '';
+
+      // valida WhatsApp: remove tudo que não é número e exige 10 ou 11 dígitos
+      var rawPhone = whatsappInput.value || '';
+      var digits   = rawPhone.replace(/\D/g, '');
+
+      if (digits.length < 10 || digits.length > 11) {
+        event.preventDefault();
+        errorBox.textContent = 'Por favor, informe um WhatsApp válido com DDD (10 ou 11 dígitos).';
+        whatsappInput.focus();
+        return false;
+      }
+
+      // valida email (formato simples)
+      var email = emailInput.value || '';
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+      if (!emailRegex.test(email)) {
+        event.preventDefault();
+        errorBox.textContent = 'Por favor, informe um e-mail válido.';
+        emailInput.focus();
+        return false;
+      }
+
+      return true;
+    }
+  </script>
 
 </body>
 </html>
