@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Obrigado por enviar sua solicitação de Análise Técnica de Crédito com a Sena &amp; Caetano Consultoria Técnica Financeira."
+    content="Obrigado por enviar seus dados de contato para a Sena &amp; Caetano Consultoria Técnica Financeira."
   />
 
   <!-- Meta Pixel Code -->
@@ -27,7 +27,7 @@
       s = b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t, s);
     })(window, document, 'script');
-    fbq('init', '1168676065407223'); //
+    fbq('init', 'PIXEL_ID_AQUI'); // <-- SUBSTITUA PELO ID REAL DO PIXEL
     fbq('track', 'PageView');
     fbq('track', 'Lead');
   </script>
@@ -36,7 +36,7 @@
       height="1"
       width="1"
       style="display:none"
-      src="https://www.facebook.com/tr?id=1168676065407223&ev=PageView&noscript=1"
+      src="https://www.facebook.com/tr?id=PIXEL_ID_AQUI&ev=PageView&noscript=1"
       alt=""
     />
   </noscript>
@@ -44,14 +44,14 @@
 
   <style>
     :root {
-      --bg: #0f172a;
-      --bg-card: #020617;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.15);
-      --text: #e5e7eb;
-      --text-muted: #9ca3af;
-      --border: #1f2937;
-      --radius-xl: 1.5rem;
+      --bg: #f3f4f6;
+      --bg-card: #ffffff;
+      --accent: #2563eb;
+      --accent-soft: rgba(37, 99, 235, 0.12);
+      --text: #0f172a;
+      --text-muted: #4b5563;
+      --border: #e5e7eb;
+      --radius-xl: 1.25rem;
     }
 
     * {
@@ -62,7 +62,7 @@
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: radial-gradient(circle at top, #1f2937 0, var(--bg) 40%, #020617 100%);
+      background: radial-gradient(circle at top, #e5e7eb 0, var(--bg) 55%, #d1d5db 100%);
       color: var(--text);
       min-height: 100vh;
       display: flex;
@@ -77,53 +77,52 @@
     }
 
     .card {
-      background: linear-gradient(135deg, rgba(148, 163, 184, 0.12), rgba(15, 23, 42, 0.95));
+      background: var(--bg-card);
       border-radius: var(--radius-xl);
       border: 1px solid var(--border);
-      padding: 32px 28px;
+      padding: 28px 24px;
       box-shadow:
-        0 18px 60px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(15, 23, 42, 0.9);
-      backdrop-filter: blur(14px);
+        0 18px 50px rgba(15, 23, 42, 0.08),
+        0 0 0 1px rgba(148, 163, 184, 0.18);
     }
 
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 4px 10px;
+      padding: 6px 12px;
       border-radius: 999px;
       background: var(--accent-soft);
       color: var(--accent);
-      font-size: 12px;
-      font-weight: 500;
+      font-size: 13px;
+      font-weight: 600;
       margin-bottom: 16px;
     }
 
     .badge-dot {
-      width: 8px;
-      height: 8px;
+      width: 9px;
+      height: 9px;
       border-radius: 999px;
       background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.25);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.25);
     }
 
     h1 {
-      font-size: 26px;
-      line-height: 1.2;
-      margin-bottom: 12px;
+      font-size: 24px;
+      line-height: 1.25;
+      margin-bottom: 10px;
     }
 
     p.lead {
       font-size: 15px;
       color: var(--text-muted);
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .highlights {
       display: grid;
-      gap: 12px;
-      margin-bottom: 24px;
+      gap: 10px;
+      margin-bottom: 22px;
     }
 
     .highlight-item {
@@ -135,17 +134,17 @@
     }
 
     .highlight-icon {
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      border: 1px solid rgba(148, 163, 184, 0.7);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 11px;
+      font-size: 12px;
       color: var(--accent);
       flex-shrink: 0;
-      margin-top: 2px;
+      margin-top: 1px;
     }
 
     .divider {
@@ -153,10 +152,10 @@
       background: linear-gradient(
         90deg,
         transparent,
-        rgba(148, 163, 184, 0.4),
+        rgba(148, 163, 184, 0.8),
         transparent
       );
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .footer {
@@ -175,17 +174,17 @@
       gap: 8px;
       padding: 8px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #eff6ff;
       text-decoration: none;
       color: var(--text);
       font-size: 13px;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
     }
 
     .cta:hover {
       transform: translateY(-1px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.15);
       border-color: var(--accent);
     }
 
@@ -195,7 +194,7 @@
 
     @media (max-width: 480px) {
       .card {
-        padding: 24px 20px;
+        padding: 22px 18px;
       }
 
       h1 {
@@ -209,36 +208,37 @@
     <div class="card">
       <div class="badge">
         <span class="badge-dot"></span>
-        Análise técnica recebida com sucesso
+        Dados recebidos com sucesso
       </div>
 
       <h1>Obrigado por confiar na Sena &amp; Caetano.</h1>
 
       <p class="lead">
-        Recebemos os seus dados e vamos iniciar a análise técnica do seu caso para buscar
-        a melhor estratégia de regularização dentro da lei.
+        Recebemos os seus dados de contato e, em breve, nossa equipe técnica
+        vai falar com você para explicar, com clareza, como funciona o processo
+        de regularização via REMOV-C™.
       </p>
 
       <div class="highlights">
         <div class="highlight-item">
           <div class="highlight-icon">1</div>
           <div>
-            Em breve você receberá um contato no WhatsApp informado com o
-            <strong>diagnóstico inicial</strong> do seu CPF/CNPJ.
+            Você receberá um retorno pelo <strong>WhatsApp</strong> ou
+            <strong>e-mail</strong> informados no formulário.
           </div>
         </div>
         <div class="highlight-item">
           <div class="highlight-icon">2</div>
           <div>
-            Nessa primeira etapa, nenhum contrato é assinado. Nosso foco é
-            <strong>entender o cenário</strong> e mapear possibilidades técnicas.
+            Nesse primeiro contato, não pedimos CPF/CNPJ. Nosso objetivo é
+            <strong>entender seu momento</strong> e explicar as etapas do serviço.
           </div>
         </div>
         <div class="highlight-item">
           <div class="highlight-icon">3</div>
           <div>
-            Fique atento às notificações. Caso não encontre nossa mensagem, verifique
-            também a pasta de <strong>spam</strong> e a aba “Promoções”.
+            Caso não encontre nossa mensagem, verifique também a pasta de
+            <strong>spam</strong> e a aba “Promoções”.
           </div>
         </div>
       </div>
@@ -248,7 +248,7 @@
       <div class="footer">
         <span>Sena &amp; Caetano Consultoria Técnica Financeira</span>
         <a
-          href="https://wa.me/5561984301988"
+          href="https://wa.me/55SEU_WHATS_AQUI"
           target="_blank"
           rel="noopener noreferrer"
           class="cta"
