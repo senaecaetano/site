@@ -27,16 +27,18 @@
       s = b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t, s);
     })(window, document, 'script');
-    fbq('init', 'PIXEL_ID_AQUI'); // <-- SUBSTITUA PELO ID REAL DO PIXEL
+
+    fbq('init', '1168676065407223');
     fbq('track', 'PageView');
     fbq('track', 'Lead');
   </script>
+
   <noscript>
     <img
       height="1"
       width="1"
       style="display:none"
-      src="https://www.facebook.com/tr?id=PIXEL_ID_AQUI&ev=PageView&noscript=1"
+      src="https://www.facebook.com/tr?id=1168676065407223&ev=PageView&noscript=1"
       alt=""
     />
   </noscript>
@@ -196,13 +198,13 @@
       .card {
         padding: 22px 18px;
       }
-
       h1 {
         font-size: 22px;
       }
     }
   </style>
 </head>
+
 <body>
   <div class="wrapper">
     <div class="card">
@@ -227,6 +229,7 @@
             <strong>e-mail</strong> informados no formulário.
           </div>
         </div>
+
         <div class="highlight-item">
           <div class="highlight-icon">2</div>
           <div>
@@ -234,6 +237,7 @@
             <strong>entender seu momento</strong> e explicar as etapas do serviço.
           </div>
         </div>
+
         <div class="highlight-item">
           <div class="highlight-icon">3</div>
           <div>
@@ -247,8 +251,9 @@
 
       <div class="footer">
         <span>Sena &amp; Caetano Consultoria Técnica Financeira</span>
+
         <a
-          href="https://wa.me/55SEU_WHATS_AQUI"
+          href="https://wa.me/5561984301988"
           target="_blank"
           rel="noopener noreferrer"
           class="cta"
