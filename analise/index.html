@@ -383,7 +383,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 type="tel"
                 id="whatsapp"
                 name="whatsapp"
-                placeholder="(11) 9 9999-9999"
+                placeholder="(61) 9 9999-9999"
                 required
               />
               <div class="error-message" id="erro-whatsapp"></div>
@@ -478,7 +478,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         const whatsappFormatado = validarWhatsapp(campoWhatsapp.value);
         if (!whatsappFormatado) {
           erroWhatsapp.textContent =
-            'Informe um WhatsApp válido com 11 dígitos (DDD + número).';
+            'Informe um WhatsApp com 11 dígitos incluindo o 9 (DDD + número).';
           valido = false;
         }
 
