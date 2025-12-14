@@ -1,9 +1,10 @@
-const SHEET_ID = 'PASTE_GOOGLE_SHEET_ID_HERE';
+const SHEET_ID = '18F3db9qk0VO7TRStmmBjws5mhHnr47zFTGB_6XYOcHg';
 const SHEET_NAME = 'Leads';
 const REDIRECT_URL = 'https://www.senaecaetano.com.br/obrigado';
+const HEADER_ROW = ['DATA/HORA', 'NOME', 'EMAIL', 'WHATSAPP'];
 
 function doOptions() {
-  return buildResponse({ ok: true, message: 'ok' }, 200);
+  return buildResponse({ ok: true, message: 'ok' });
 }
 
 function doPost(e) {
@@ -16,11 +17,19 @@ function doPost(e) {
     ensureHeader(sheet, debug);
     appendRow(sheet, normalized, debug);
     debug.push('Row appended');
-    return buildResponse({ ok: true, redirect: REDIRECT_URL, received: normalized }, 200);
+    return buildResponse({
+      ok: true,
+      redirect: REDIRECT_URL,
+      received: {
+        nome: normalized.nome,
+        email: normalized.email,
+        whatsapp: normalized.whatsapp
+      }
+    });
   } catch (err) {
     debug.push('Error: ' + err);
     Logger.log(err);
-    return buildResponse({ ok: false, error: String(err), debug }, 500);
+    return buildResponse({ ok: false, error: String(err), debug });
   } finally {
     Logger.log(debug.join(' | '));
   }
@@ -28,53 +37,31 @@ function doPost(e) {
 
 function parseRequest(e, debug) {
   if (!e) throw new Error('Empty event');
-  const hasJson = e.postData && e.postData.type && e.postData.type.indexOf('json') !== -1;
-  if (hasJson && e.postData.contents) {
-    debug.push('Parsing JSON body');
-    return JSON.parse(e.postData.contents);
+  const postData = e.postData;
+  if (postData && postData.type && postData.contents) {
+    const contentType = postData.type.toLowerCase();
+    if (contentType.indexOf('json') !== -1) {
+      debug.push('Parsing JSON body');
+      return JSON.parse(postData.contents);
+    }
+    if (contentType.indexOf('x-www-form-urlencoded') !== -1) {
+      debug.push('Parsing form-urlencoded body');
+      return Utilities.parseQueryString(postData.contents);
+    }
   }
-  debug.push('Parsing form body');
-  const params = e.parameter || {};
-  return {
-    nome: params.nome,
-    email: params.email,
-    whatsapp: params.whatsapp,
-    utm_source: params.utm_source,
-    utm_medium: params.utm_medium,
-    utm_campaign: params.utm_campaign,
-    utm_content: params.utm_content,
-    utm_term: params.utm_term,
-    referrer: params.referrer,
-    user_agent: params.user_agent,
-    audience: params.audience,
-    page: params.page
-  };
+  debug.push('Using query parameters');
+  return e.parameter || {};
 }
 
 function normalizePayload(payload, debug) {
   if (!payload) throw new Error('Missing payload');
-  const normalizePhone = function (raw) {
-    if (!raw) return '';
-    return String(raw).replace(/\D+/g, '');
-  };
-  const clean = function (val) {
-    return (val || '').toString().trim();
-  };
+  const clean = function (val) { return (val || '').toString().trim(); };
+  const normalizePhone = function (raw) { return clean(raw).replace(/\D+/g, ''); };
   const result = {
     timestamp: new Date(),
     nome: clean(payload.nome),
     email: clean(payload.email),
-    whatsapp: normalizePhone(payload.whatsapp),
-    utm_source: clean(payload.utm_source),
-    utm_medium: clean(payload.utm_medium),
-    utm_campaign: clean(payload.utm_campaign),
-    utm_content: clean(payload.utm_content),
-    utm_term: clean(payload.utm_term),
-    referrer: clean(payload.referrer),
-    user_agent: clean(payload.user_agent),
-    audience: clean(payload.audience),
-    page: clean(payload.page),
-    debug_status: 'OK'
+    whatsapp: normalizePhone(payload.whatsapp)
   };
   debug.push('Normalized payload');
   return result;
@@ -86,41 +73,24 @@ function getSheet() {
 }
 
 function ensureHeader(sheet, debug) {
-  const header = ['TIMESTAMP', 'NOME', 'EMAIL', 'WHATSAPP', 'UTM_SOURCE', 'UTM_MEDIUM', 'UTM_CAMPAIGN', 'UTM_CONTENT', 'UTM_TERM', 'REFERRER', 'USER_AGENT', 'AUDIENCE', 'PAGE', 'DEBUG_STATUS'];
-  const firstRow = sheet.getRange(1, 1, 1, header.length).getValues()[0];
-  const needsHeader = firstRow.join('') === '' || firstRow.some(function (cell, idx) { return String(cell).toUpperCase() !== header[idx]; });
+  const firstRow = sheet.getRange(1, 1, 1, HEADER_ROW.length).getValues()[0];
+  const needsHeader = firstRow.join('') === '' || firstRow.some(function (cell, idx) {
+    return String(cell).toUpperCase() !== HEADER_ROW[idx];
+  });
   if (needsHeader) {
-    sheet.getRange(1, 1, 1, header.length).setValues([header]);
+    sheet.getRange(1, 1, 1, HEADER_ROW.length).setValues([HEADER_ROW]);
     debug.push('Header ensured');
   }
 }
 
 function appendRow(sheet, payload, debug) {
-  const row = [
-    payload.timestamp,
-    payload.nome,
-    payload.email,
-    payload.whatsapp,
-    payload.utm_source,
-    payload.utm_medium,
-    payload.utm_campaign,
-    payload.utm_content,
-    payload.utm_term,
-    payload.referrer,
-    payload.user_agent,
-    payload.audience,
-    payload.page,
-    payload.debug_status
-  ];
+  const row = [payload.timestamp, payload.nome, payload.email, payload.whatsapp];
   sheet.appendRow(row);
   debug.push('Row: ' + JSON.stringify(row));
 }
 
-function buildResponse(data, statusCode) {
+function buildResponse(data) {
   const output = ContentService.createTextOutput(JSON.stringify(data));
   output.setMimeType(ContentService.MimeType.JSON);
-  output.setHeader('Access-Control-Allow-Origin', '*');
-  output.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  output.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  return output.setResponseCode(statusCode || 200);
+  return output;
 }
