@@ -612,73 +612,47 @@ footer{ text-align: center; padding: 30px 18px 44px; font-size: 0.88rem; color: 
 </footer>
   
 <script>
-  const form = document.getElementById("leadForm");
-  const submitBtn = document.getElementById("submitBtn");
-  const ENDPOINT = form.action;
-  const STORAGE_KEY = "lead_form_payload";
+  <script>
+const form = document.getElementById("leadForm");
+const submitBtn = document.getElementById("submitBtn");
+const ENDPOINT = "https://script.google.com/macros/s/AKfycby9jNVfUTBcKMb_zkJ01mfbWN2ku-_YnCXxPSkv5kqrV3JOo_JaWSV-7E2As8qs7icHTQ/exec";
 
-  const onlyDigits = (value = "") => value.replace(/\D+/g, "");
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-  async function handleSubmit(event) {
-    event.preventDefault();
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Enviando...";
 
-    const nome = (document.getElementById("nome").value || "").trim();
-    const whatsappInput = document.getElementById("whatsapp");
-    whatsappInput.value = onlyDigits(whatsappInput.value || "");
-    const email = (document.getElementById("email").value || "").trim();
+  const payload = {
+    nome: document.getElementById("nome").value,
+    whatsapp: document.getElementById("whatsapp").value.replace(/\D/g, ""),
+    email: document.getElementById("email").value
+  };
 
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Enviando…";
+  try {
+    const res = await fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
 
-    const payload = {
-      nome,
-      whatsapp: whatsappInput.value,
-      email,
-      audience: document.querySelector("input[name='audience']")?.value || "",
-      page: document.querySelector("input[name='page']")?.value || "",
-      utm_source: document.getElementById("utm_source").value,
-      utm_medium: document.getElementById("utm_medium").value,
-      utm_campaign: document.getElementById("utm_campaign").value,
-      utm_content: document.getElementById("utm_content").value,
-      utm_term: document.getElementById("utm_term").value,
-      referrer: document.getElementById("referrer").value,
-      user_agent: document.getElementById("user_agent").value
-    };
+    const data = await res.json();
 
-    try { fbq && fbq("track", "Lead"); } catch (e) {}
-
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
-    } catch (e) {}
-
-    try {
-      const response = await fetch(ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-
-      const data = await response.json().catch(() => ({}));
-
-      if (response.ok && data.ok) {
-        if (data.redirect) {
-          window.location.href = data.redirect;
-        }
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Quero avançar agora";
-        return;
-      }
-
-      throw new Error(data.error || `Erro ${response.status}`);
-    } catch (err) {
-      console.error("Falha ao enviar lead", err);
-      alert("Não conseguimos enviar seus dados agora. Por favor, tente novamente em instantes.");
-      submitBtn.disabled = false;
-      submitBtn.textContent = "Quero avançar agora";
+    if (data.ok && data.redirect) {
+      window.location.href = data.redirect;
+      return;
     }
-  }
 
-  form.addEventListener("submit", handleSubmit);
+    throw new Error("Resposta inválida");
+
+  } catch (err) {
+    alert("Não conseguimos enviar seus dados agora. Tente novamente.");
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Quero avançar agora";
+  }
+});
+</script>
+
 </script>
 </body>
 </html>
