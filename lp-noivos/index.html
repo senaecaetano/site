@@ -705,6 +705,48 @@
     grid-template-columns: 1fr !important;
 }
 
+/* ===== AJUSTE FINAL VISUAL HERO ===== */
+
+/* Força pílulas voltarem ao formato correto */
+.hero-bullets,
+.hero-pills{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  gap:10px !important;
+  margin:16px 0 22px !important;
+}
+
+.hero-bullet,
+.hero-pill{
+  display:inline-flex !important;
+  padding:9px 14px !important;
+  border-radius:999px !important;
+  background:rgba(255,255,255,.18) !important;
+  border:1px solid rgba(255,255,255,.35) !important;
+  white-space:normal !important;
+  font-size:.92rem !important;
+}
+
+/* Dá respiro real antes dos botões */
+.hero-cta,
+.hero-cta-wrapper{
+  margin-top:22px !important;
+}
+
+/* CTA principal mais forte */
+.cta-btn,
+.btn-primary{
+  min-height:56px !important;
+  font-size:1.05rem !important;
+}
+
+/* Mobile: tudo empilhado bonito */
+@media(max-width:640px){
+  .hero-bullets,
+  .hero-pills{
+    flex-direction:column !important;
+}
+  
   </style>
 </head>
 
