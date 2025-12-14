@@ -612,55 +612,73 @@ footer{ text-align: center; padding: 30px 18px 44px; font-size: 0.88rem; color: 
 </footer>
   
 <script>
-const nome = (document.getElementById("nome").value || "").trim();
-  const whatsappInput = document.getElementById("whatsapp");
-  whatsappInput.value = onlyDigits(whatsappInput.value || "");
-  const email = (document.getElementById("email").value || "").trim();
-  submitBtn.disabled = true;
-  submitBtn.textContent = "Enviando…";
-  const payload = {
-    nome,
-    whatsapp: whatsappInput.value,
-    email,
-    audience: document.querySelector("input[name='audience']")?.value || "",
-    page: document.querySelector("input[name='page']")?.value || "",
-    utm_source: document.getElementById("utm_source").value,
-    utm_medium: document.getElementById("utm_medium").value,
-    utm_campaign: document.getElementById("utm_campaign").value,
-    utm_content: document.getElementById("utm_content").value,
-    utm_term: document.getElementById("utm_term").value,
-    referrer: document.getElementById("referrer").value,
-    user_agent: document.getElementById("user_agent").value
-  };
-  try { fbq && fbq("track", "Lead"); } catch(e) {}
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
-  } catch(e) {}
-  try {
-    const formBody = new URLSearchParams();
-    Object.entries(payload).forEach(function ([key, value]) {
-      formBody.append(key, value ?? "");
-    });
-    const response = await fetch(ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
-      body: formBody
-    });
-    const data = await response.json().catch(() => ({}));
-    if (response.ok && data.ok) {
-      window.location.href = data.redirect || THANK_YOU_URL;
-      return;
+  const form = document.getElementById("leadForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const ENDPOINT = form.action;
+  const STORAGE_KEY = "lead_form_payload";
+
+  const onlyDigits = (value = "") => value.replace(/\D+/g, "");
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    const nome = (document.getElementById("nome").value || "").trim();
+    const whatsappInput = document.getElementById("whatsapp");
+    whatsappInput.value = onlyDigits(whatsappInput.value || "");
+    const email = (document.getElementById("email").value || "").trim();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Enviando…";
+
+    const payload = {
+      nome,
+      whatsapp: whatsappInput.value,
+      email,
+      audience: document.querySelector("input[name='audience']")?.value || "",
+      page: document.querySelector("input[name='page']")?.value || "",
+      utm_source: document.getElementById("utm_source").value,
+      utm_medium: document.getElementById("utm_medium").value,
+      utm_campaign: document.getElementById("utm_campaign").value,
+      utm_content: document.getElementById("utm_content").value,
+      utm_term: document.getElementById("utm_term").value,
+      referrer: document.getElementById("referrer").value,
+      user_agent: document.getElementById("user_agent").value
+    };
+
+    try { fbq && fbq("track", "Lead"); } catch (e) {}
+
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+    } catch (e) {}
+
+    try {
+      const response = await fetch(ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (response.ok && data.ok) {
+        if (data.redirect) {
+          window.location.href = data.redirect;
+        }
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Quero avançar agora";
+        return;
+      }
+
+      throw new Error(data.error || `Erro ${response.status}`);
+    } catch (err) {
+      console.error("Falha ao enviar lead", err);
+      alert("Não conseguimos enviar seus dados agora. Por favor, tente novamente em instantes.");
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Quero avançar agora";
     }
-    throw new Error(data.error || `Erro ${response.status}`);
-  } catch (err) {
-    console.error("Falha ao enviar lead", err);
-    alert("Não conseguimos enviar seus dados agora. Por favor, tente novamente em instantes.");
-    submitBtn.disabled = false;
-    submitBtn.textContent = "Quero avançar agora";
   }
-}
-form.addEventListener("submit", handleSubmit);
+
+  form.addEventListener("submit", handleSubmit);
 </script>
 </body>
 </html>
