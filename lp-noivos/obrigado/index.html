@@ -3,24 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Obrigada! Próximo passo | Sena &amp; Caetano</title>
-  <meta name="description" content="Obrigado por enviar seus dados. Agora continue no WhatsApp para receber a orientação de contratação do REMOV-C™ para noivos e noivas." />
-  <meta name="robots" content="noindex,nofollow" />
+  <title>Obrigada(o)! Próximo passo no WhatsApp | Sena &amp; Caetano</title>
+  <meta name="description" content="Recebemos seus dados. Agora continue no WhatsApp para avançar no REMOV-C™ (Noivos)." />
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Google Tag Manager (WEB) -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5MJSWJBM');
-  </script>
-  <!-- End GTM -->
 
   <!-- Meta Pixel -->
   <script>
@@ -30,329 +18,180 @@
         n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
       };
       if (!f._fbq) f._fbq = n;
-      n.push = n; n.loaded = !0; n.version = "2.0"; n.queue = [];
-      t = b.createElement(e); t.async = !0; t.src = "https://connect.facebook.net/en_US/fbevents.js";
-      s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+      n.push = n;
+      n.loaded = !0;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = "https://connect.facebook.net/en_US/fbevents.js";
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
     })(window, document, "script");
     fbq("init", "1168676065407223");
     fbq("track", "PageView");
-    // Evento de conversão da página de obrigado (lead concluído)
     fbq("track", "Lead");
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1168676065407223&ev=PageView&noscript=1"/>
   </noscript>
-  <!-- End Pixel -->
+
+  <!-- GTM (WEB) -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5MJSWJBM');
+  </script>
 
   <style>
     :root{
       --bg: #f9f6ff;
-      --bg2: #fff4f8;
-      --hero: linear-gradient(135deg, #4b2c7a 0%, #7a3db2 22%, #c35bd2 46%, #f59ac4 72%, #fff4f8 100%);
-      --card: #ffffff;
-      --border: rgba(197, 157, 255, 0.35);
+      --grad: linear-gradient(135deg, #4b2c7a 0%, #7a3db2 22%, #c35bd2 46%, #f59ac4 72%, #fff4f8 100%);
       --text: #261f33;
       --soft: #5a4b6f;
       --gold: #e3b869;
       --ring: rgba(184, 147, 255, 0.24);
       --shadow: 0 18px 40px rgba(74, 44, 116, 0.12);
     }
-
     *{ box-sizing:border-box; }
     body{
       margin:0;
-      font-family: "Inter", sans-serif;
+      font-family: Inter, sans-serif;
+      background: radial-gradient(circle at top left, #fff7ff 0, #f9f6ff 40%, #f4f0ff 70%, #ffffff 100%);
       color: var(--text);
-      background: radial-gradient(circle at top left, #fff7ff 0, var(--bg) 40%, #f4f0ff 70%, #ffffff 100%);
-      line-height:1.55;
+      line-height:1.6;
     }
-
-    .wrap{ max-width: 980px; margin: 0 auto; padding: 24px 18px 60px; }
-
-    .top{
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(200,150,255,0.22);
-      backdrop-filter: blur(10px);
-      border-radius: 18px;
-      padding: 14px 16px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 12px;
-      box-shadow: 0 10px 24px rgba(74, 44, 116, 0.08);
-    }
-    .brand{ display:flex; align-items:center; gap: 10px; }
-    .badge{
-      width: 38px; height: 38px; border-radius: 14px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.85), rgba(233,213,255,0.9));
-      border: 1px solid rgba(197,155,255,0.6);
-      display:grid; place-items:center;
-      font-weight: 900; color:#5c3b8f;
-    }
-    .bn{ font-weight: 900; line-height:1.1; }
-    .bs{ font-size: .82rem; color:#6b5b86; margin-top: 1px; }
-
     .hero{
-      margin-top: 16px;
-      border-radius: 24px;
-      padding: 28px 18px;
-      background: var(--hero);
-      color: #fff;
-      position: relative;
-      overflow:hidden;
-      box-shadow: 0 18px 44px rgba(20, 7, 45, 0.26);
+      background: var(--grad);
+      color:#fff;
+      padding: 56px 18px 28px;
     }
-    .hero:before{
-      content:"";
-      position:absolute;
-      width: 320px; height: 320px;
-      right: -120px; top: -120px;
-      border-radius: 999px;
-      background: radial-gradient(circle, rgba(255,255,255,0.65) 0, rgba(253,214,255,0.45) 40%, transparent 70%);
-      filter: blur(26px);
-      opacity: .7;
-      pointer-events:none;
+    .wrap{ max-width: 980px; margin: 0 auto; }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      opacity:.95;
+    }
+    .badge{
+      width:38px; height:38px; border-radius:12px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.32);
+      display:grid; place-items:center;
+      font-weight:900;
     }
     h1{
-      margin:0 0 8px;
       font-family: "Playfair Display", serif;
-      font-size: clamp(1.7rem, 3.2vw, 2.2rem);
-      letter-spacing: .01em;
-      line-height: 1.12;
+      margin: 18px 0 10px;
+      line-height:1.12;
+      font-size: clamp(2rem, 4vw, 2.8rem);
     }
-    .hero p{ margin: 0 0 10px; opacity:.95; max-width: 760px; }
-    .chips{ display:flex; flex-wrap:wrap; gap: 10px; margin-top: 12px; }
-    .chip{
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.18);
-      border: 1px solid rgba(255,255,255,0.35);
-      backdrop-filter: blur(8px);
-      font-size: .92rem;
-      white-space: nowrap;
-    }
-
-    .grid{
-      margin-top: 18px;
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-    @media (min-width: 920px){
-      .grid{ grid-template-columns: 1.2fr .8fr; }
-    }
-
+    .sub{ max-width: 760px; opacity:.96; margin: 0 0 20px; }
     .card{
-      background: var(--card);
-      border: 1px solid var(--border);
+      margin-top: -18px;
+      background:#fff;
       border-radius: 22px;
+      padding: 22px;
       box-shadow: var(--shadow);
-      padding: 18px 18px;
+      border: 1px solid rgba(224, 178, 255, 0.75);
     }
-    .card h2{
-      margin: 0 0 10px;
-      font-size: 1.12rem;
-      color: var(--text);
-      line-height:1.2;
+    .row{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin-top: 10px;
     }
-    .muted{ color: var(--soft); margin: 0 0 10px; font-size:.95rem; }
-
-    .actions{ display:flex; flex-direction:column; gap: 10px; margin-top: 12px; }
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap: 10px;
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
       padding: 14px 18px;
       border-radius: 999px;
       text-decoration:none;
       font-weight: 900;
-      cursor:pointer;
       border: none;
-      width: 100%;
-      transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
+      cursor:pointer;
     }
     .btn-primary{
       background: linear-gradient(135deg, #fff5d7, var(--gold));
-      color: #3c2c15;
-      box-shadow: 0 12px 26px rgba(121, 77, 16, 0.30);
+      color:#3c2c15;
+      box-shadow: 0 12px 26px rgba(121, 77, 16, 0.25);
+      flex: 1 1 260px;
     }
-    .btn-primary:hover{ transform: translateY(-1px); box-shadow: 0 18px 34px rgba(121, 77, 16, 0.42); }
-    .btn-secondary{
-      background: rgba(233,213,255,0.35);
-      border: 1px solid rgba(197,155,255,0.6);
-      color:#45216f;
-    }
-    .btn-secondary:hover{ transform: translateY(-1px); background: rgba(233,213,255,0.48); }
     .btn-ghost{
-      background: rgba(255,255,255,0.16);
-      border: 1px solid rgba(200,150,255,0.35);
-      color: #3f2a5e;
+      background: rgba(233,213,255,0.35);
+      color:#45216f;
+      border: 1px solid rgba(197,155,255,0.6);
+      flex: 1 1 220px;
     }
-
-    .steps{
-      margin: 10px 0 0;
-      padding-left: 18px;
+    .mini{
+      margin-top: 10px;
       color: var(--soft);
-      font-size:.95rem;
-    }
-    .steps li{ margin-bottom: 6px; }
-
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap: 8px;
-      font-weight: 800;
-      font-size: .82rem;
-      color:#5c3b8f;
-      background: rgba(239,229,255,0.86);
-      border: 1px solid rgba(197,155,255,0.45);
-      border-radius: 999px;
-      padding: 6px 10px;
-      margin-bottom: 10px;
-    }
-    .dot{ width: 8px; height: 8px; border-radius: 999px; background: #f16aa8; }
-
-    .fine{
-      margin-top: 18px;
-      font-size: .80rem;
-      color: #7c6c95;
-      text-align:center;
-      line-height:1.55;
-      opacity: .95;
+      font-size: .92rem;
     }
   </style>
 </head>
-
 <body>
+
   <!-- GTM (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MJSWJBM"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End GTM (noscript) -->
 
-  <div class="wrap">
-
-    <div class="top">
+  <section class="hero">
+    <div class="wrap">
       <div class="brand">
         <div class="badge">S&amp;C</div>
         <div>
-          <div class="bn">Sena &amp; Caetano</div>
-          <div class="bs">Consultoria Técnica Financeira • REMOV-C™</div>
+          <div style="font-weight:900">Sena &amp; Caetano</div>
+          <div style="font-size:.86rem; opacity:.92">REMOV-C™ • Noivos</div>
         </div>
       </div>
-      <div style="text-align:right; color:#6b5b86; font-size:.85rem;">
-        Atendimento: <strong>(61) 98430-1988</strong>
-      </div>
-    </div>
-
-    <section class="hero" aria-label="Obrigado">
-      <h1>Obrigada(o). Seu pedido foi recebido.</h1>
-      <p>
-        Agora você está a <strong>um passo</strong> de destravar o planejamento do casamento com clareza e contrato.
-        O próximo passo é seguir no WhatsApp com a mensagem pronta (sem enrolação).
+      <h1>Perfeito. Agora é o próximo passo.</h1>
+      <p class="sub">
+        Recebemos seus dados. Para avançar rápido e do jeito certo, continue no WhatsApp com a mensagem pronta.
       </p>
+    </div>
+  </section>
 
-      <div class="chips">
-        <span class="chip">✅ Lead registrado</span>
-        <span class="chip">✅ Próximo passo: WhatsApp</span>
-        <span class="chip">✅ Sem promessas mágicas</span>
-      </div>
-    </section>
+  <div class="wrap">
+    <div class="card">
+      <div style="font-weight:900; font-size:1.05rem;">O que acontece agora</div>
+      <ul style="margin:8px 0 0; padding-left:18px; color:#574b67;">
+        <li>Você confirma seu cenário (CPF/CNPJ, restrições e urgência do casamento).</li>
+        <li>Você recebe o caminho correto (origem x aplicativo x protocolo técnico).</li>
+        <li>Se fizer sentido, você avança para contratação com contrato e responsabilidade.</li>
+      </ul>
 
-    <div class="grid">
-      <div class="card">
-        <div class="pill"><span class="dot"></span><span>O que acontece agora</span></div>
-        <h2>Você vai receber o caminho certo para o seu cenário (noivos/noivas)</h2>
-        <p class="muted">
-          Sem “consulta grátis” que vira custo escondido. Você entende: origem x aplicativo x protocolo técnico,
-          e recebe a orientação para contratação do REMOV-C™.
-        </p>
-        <ol class="steps">
-          <li>Você confirma seu contexto e objetivo (casamento/financiamento/limite).</li>
-          <li>Você recebe a orientação objetiva de contratação do protocolo.</li>
-          <li>Após contratação, a etapa técnica começa (documentos, relatórios, trâmites).</li>
-        </ol>
-
-        <div class="actions">
-          <a class="btn btn-primary" id="btnWhats" href="#" target="_blank" rel="noopener">
-            Continuar no WhatsApp agora
-          </a>
-          <a class="btn btn-secondary" id="btnInstagram" href="https://instagram.com/senaecaetano" target="_blank" rel="noopener">
-            Ver o Instagram (@senaecaetano)
-          </a>
-        </div>
+      <div class="row">
+        <a class="btn btn-primary" id="btnWhats" href="https://wa.me/5561984301988" target="_blank" rel="noopener">
+          Ir para o WhatsApp agora
+        </a>
+        <a class="btn btn-ghost" href="https://www.senaecaetano.com.br/">
+          Voltar ao site
+        </a>
       </div>
 
-      <div class="card">
-        <div class="pill"><span class="dot"></span><span>Dica rápida</span></div>
-        <h2>Se você estiver com pressa (sem perder elegância)</h2>
-        <p class="muted">
-          Clique no WhatsApp e já chegue com a mensagem pronta. Isso acelera o atendimento e evita retrabalho.
-        </p>
-
-        <div class="actions">
-          <a class="btn btn-ghost" href="https://www.senaecaetano.com.br/" rel="noopener">
-            Voltar ao site
-          </a>
-        </div>
+      <div class="mini">
+        Dica: se o WhatsApp não abrir, verifique bloqueador de pop-up ou tente novamente tocando no botão.
       </div>
     </div>
-
-    <div class="fine">
-      © 2025 Sena &amp; Caetano • REMOV-C™. Este site tem finalidade informativa e comercial.
-      O protocolo é consultoria técnica financeira orientada por critérios legais aplicáveis a apontamentos em birôs de crédito.
-    </div>
-
   </div>
 
   <script>
-    // ===== CONFIG =====
-    const WHATS_NUMBER_E164 = "5561984301988";
-
-    // tenta puxar lead salvo no browser (seu LP salva como sc_lead_noivos)
-    function safeParse(json){
-      try { return JSON.parse(json); } catch(e){ return null; }
-    }
-    const stored = safeParse(localStorage.getItem("sc_lead_noivos"));
-
-    function buildWhatsText(lead){
-      const nome = (lead && lead.nome) ? lead.nome : "";
-      const whatsapp = (lead && lead.whatsapp) ? lead.whatsapp : "";
-      const email = (lead && lead.email) ? lead.email : "";
-
-      const lines = [
-        "Olá! Vim da página de Obrigado (NOIVOS) e quero avançar no REMOV-C™.",
-        "",
-        nome ? `Nome: ${nome}` : "",
-        whatsapp ? `WhatsApp: ${whatsapp}` : "",
-        email ? `Email: ${email}` : "",
-        "",
-        "Objetivo: destravar crédito/financiamento e organizar a vida financeira para o casamento.",
-        "Quero o caminho correto (origem x aplicativo x protocolo técnico) e como contratar com contrato e responsabilidade."
-      ].filter(Boolean);
-
-      return lines.join("\\n");
-    }
-
-    function buildWhatsUrl(lead){
-      const text = encodeURIComponent(buildWhatsText(lead));
-      return `https://wa.me/${WHATS_NUMBER_E164}?text=${text}`;
-    }
-
-    // seta link Whats
-    const btnWhats = document.getElementById("btnWhats");
-    const wurl = buildWhatsUrl(stored);
-    btnWhats.href = wurl;
-
-    // tracking extra (opcional): ao clicar no WhatsApp
-    btnWhats.addEventListener("click", () => {
-      try { fbq && fbq("track", "Contact"); } catch(e){}
-      try {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: "whatsapp_click", audience: "noivos", page: "obrigado" });
-      } catch(e){}
-    });
+    // tenta enriquecer o botão com dados salvos (se você salvou localStorage na LP)
+    try{
+      const saved = localStorage.getItem("sc_lead_noivos");
+      if(saved){
+        const lead = JSON.parse(saved);
+        const text = encodeURIComponent([
+          "Olá, Bruno! Acabei de enviar o formulário (NOIVOS).",
+          "",
+          `Nome: ${lead.nome || ""}`,
+          `WhatsApp: ${lead.whatsapp || ""}`,
+          `Email: ${lead.email || ""}`
+        ].join("\n"));
+        document.getElementById("btnWhats").href = "https://wa.me/5561984301988?text=" + text;
+      }
+    }catch(e){}
   </script>
+
 </body>
 </html>
