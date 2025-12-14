@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Obrigado | Sena &amp; Caetano</title>
+  <meta name="description" content="Obrigado por avançar com a Sena &amp; Caetano. Em breve a equipe entra em contato." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    (function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)})(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1168676065407223');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1168676065407223&ev=PageView&noscript=1" /></noscript>
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5MJSWJBM');
+  </script>
+  <style>
+    :root { --bg: #f9f6ff; --text: #261f33; --muted: #5a4b6f; --accent: linear-gradient(135deg, #fff5d7, #e3b869); }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Inter', sans-serif; background: radial-gradient(circle at top left, #fff7ff 0, #f9f6ff 45%, #ffffff 100%); color: var(--text); }
+    .wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 18px; }
+    .card { max-width: 720px; background: #fff; border: 1px solid rgba(200,150,255,0.25); border-radius: 20px; box-shadow: 0 20px 48px rgba(74,44,116,0.12); padding: 32px 28px; text-align: center; }
+    .badge { display: inline-block; padding: 7px 14px; border-radius: 999px; background: rgba(233,213,255,0.5); color: #45216f; font-weight: 800; letter-spacing: 0.01em; margin-bottom: 10px; }
+    h1 { font-family: 'Playfair Display', serif; margin: 6px 0 10px; font-size: clamp(2rem, 4vw, 2.6rem); }
+    p { margin: 8px 0; color: var(--muted); font-size: 1rem; line-height: 1.5; }
+    .cta { display: inline-block; margin-top: 14px; padding: 14px 24px; border-radius: 999px; background: var(--accent); color: #3c2c15; text-decoration: none; font-weight: 800; box-shadow: 0 12px 26px rgba(121,77,16,0.3); }
+    .cta:hover { transform: translateY(-1px); box-shadow: 0 16px 32px rgba(121,77,16,0.45); }
+  </style>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MJSWJBM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <div class="wrap">
+    <div class="card">
+      <div class="badge">Sena &amp; Caetano</div>
+      <h1>Obrigado, <span id="leadName">você</span>!</h1>
+      <p>Recebemos o seu pedido de avanço no REMOV-C™. Em breve a equipe entra em contato para conduzir a contratação e dar sequência na etapa técnica.</p>
+      <p>Fique de olho no seu e-mail e WhatsApp. Se não visualizar a mensagem, confira a caixa de promoções ou spam.</p>
+      <a class="cta" href="/">Voltar para a página inicial</a>
+    </div>
+  </div>
+  <script>
+    try {
+      fbq && fbq('track', 'CompleteRegistration');
+    } catch(e) {}
+    (function(){
+      const data = localStorage.getItem('sc_lead_noivos');
+      if (!data) return;
+      try {
+        const lead = JSON.parse(data);
+        if (lead && lead.nome) {
+          document.getElementById('leadName').textContent = lead.nome.split(' ')[0];
+        }
+      } catch(e) {}
+    })();
+  </script>
+</body>
+</html>

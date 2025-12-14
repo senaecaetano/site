@@ -1,11 +1,6 @@
 {
-  "redirects": [
-    { "source": "/", "destination": "/lp-noivos/" }
-  ],
   "rewrites": [
-    { "source": "/obrigado", "destination": "/lp-noivos/obrigado/index.html" },
-    { "source": "/obrigado/", "destination": "/lp-noivos/obrigado/index.html" },
-    { "source": "/obrigado/index.html", "destination": "/lp-noivos/obrigado/index.html" },
-    { "source": "/lp-noivos/obrigado", "destination": "/lp-noivos/obrigado/index.html" }
+    { "source": "/obrigado", "destination": "/obrigado/index.html" },
+    { "source": "/obrigado/", "destination": "/obrigado/index.html" }
   ]
 }
