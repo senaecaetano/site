@@ -10,41 +10,32 @@
 <form id="leadForm"
   method="POST"
   action="https://script.google.com/macros/s/AKfycby9jNVfUTBcKMb_zkJ01mfbWN2ku-_YnCXxPSkv5kqrV3JOo_JaWSV-7E2As8qs7icHTQ/exec">
+  <input type="hidden" name="redirect" id="redirectInput">
+
   <input type="text" name="nome" placeholder="Seu nome" required>
-  <input type="tel" name="telefone" placeholder="WhatsApp" required>
+  <input type="tel" name="whatsapp" placeholder="WhatsApp" required>
   <input type="email" name="email" placeholder="E-mail" required>
   <button type="submit">Quero avançar</button>
 </form>
 
 <script>
-/* ========= CONFIGURAÇÃO ÚNICA ========= */
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby9jNVfUTBcKMb_zkJ01mfbWN2ku-_YnCXxPSkv5kqrV3JOo_JaWSV-7E2As8qs7icHTQ/exec";
-/* ===================================== */
+  // Preenche o redirect absoluto para o Google Apps Script e salva os dados localmente sem interromper o POST nativo
+  (function() {
+    const form = document.getElementById("leadForm");
+    const redirectInput = document.getElementById("redirectInput");
+    if (redirectInput) {
+      redirectInput.value = new URL("/obrigado/", window.location.href).href;
+    }
 
-const THANK_YOU_URL = "/obrigado/";
-
-document.getElementById("leadForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const form = e.target;
-  const data = Object.fromEntries(new FormData(form).entries());
-
-  try {
-    const res = await fetch(APPS_SCRIPT_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
+    form.addEventListener("submit", () => {
+      try {
+        const data = Object.fromEntries(new FormData(form).entries());
+        localStorage.setItem("sc_lead_noivos", JSON.stringify(data));
+      } catch (err) {
+        // ignora erros de armazenamento
+      }
     });
-
-    const json = await res.json();
-    if (!json.ok) throw new Error("Falha");
-
-    window.location.href = THANK_YOU_URL;
-
-  } catch (err) {
-    alert("Erro ao enviar. Tente novamente.");
-  }
-});
+  })();
 </script>
 
 </body>
