@@ -610,31 +610,9 @@ footer{ text-align: center; padding: 30px 18px 44px; font-size: 0.88rem; color: 
     Aviso: este site tem finalidade informativa e comercial. O REMOV-C™ é um protocolo técnico de consultoria financeira orientado por critérios aplicáveis a apontamentos em birôs de crédito. Ele não substitui a quitação de dívidas quando o consumidor consegue pagar na origem. A contratação é formalizada por contrato. Resultados dependem de conformidade e trâmites administrativos.
   </div>
 </footer>
+  
 <script>
-const THANK_YOU_URL = "https://www.senaecaetano.com.br/obrigado";
-const STORAGE_KEY = "sc_lead_noivos";
-const ENDPOINT = "https://script.google.com/macros/s/AKfycby9jNVfUTBcKMb_zkJ01mfbWN2ku-_YnCXxPSkv5kqrV3JOo_JaWSV-7E2As8qs7icHTQ/exec";
-function onlyDigits(s){ return (s || "").replace(/\D+/g, ""); }
-function getUTM(name){ const u = new URL(window.location.href); return u.searchParams.get(name) || ""; }
-function setHidden(id, val){ const el = document.getElementById(id); if (el) el.value = val || ""; }
-(function populateMetadata(){
-  setHidden("utm_source", getUTM("utm_source"));
-  setHidden("utm_medium", getUTM("utm_medium"));
-  setHidden("utm_campaign", getUTM("utm_campaign"));
-  setHidden("utm_content", getUTM("utm_content"));
-  setHidden("utm_term", getUTM("utm_term"));
-  setHidden("referrer", document.referrer || "");
-  setHidden("user_agent", navigator.userAgent || "");
-})();
-const form = document.getElementById("leadForm");
-const submitBtn = document.getElementById("submitBtn");
-async function handleSubmit(event){
-  event.preventDefault();
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
-  }
-  const nome = (document.getElementById("nome").value || "").trim();
+const nome = (document.getElementById("nome").value || "").trim();
   const whatsappInput = document.getElementById("whatsapp");
   whatsappInput.value = onlyDigits(whatsappInput.value || "");
   const email = (document.getElementById("email").value || "").trim();
@@ -659,10 +637,15 @@ async function handleSubmit(event){
     localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
   } catch(e) {}
   try {
+    const formBody = new URLSearchParams();
+    Object.entries(payload).forEach(function ([key, value]) {
+      formBody.append(key, value ?? "");
+    });
     const response = await fetch(ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
+      body: formBody
     });
     const data = await response.json().catch(() => ({}));
     if (response.ok && data.ok) {
