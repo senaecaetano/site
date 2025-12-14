@@ -636,64 +636,73 @@
       line-height: 1.55;
     }
 
-    /* ===== CORREÇÃO DEFINITIVA DO HERO (ALINHAMENTO DE BOTÕES) ===== */
+    /* ===========================
+   FIX HERO CTA (DESKTOP + MOBILE)
+   =========================== */
 
-/* Corrige pills */
-.hero-bullets,
-.hero-pills {
+/* 1) Pills ficam organizadas e com alturas consistentes */
+.hero-bullets{
   display: flex !important;
   flex-wrap: wrap !important;
   gap: 10px !important;
+  align-items: flex-start !important;
 }
-
-.hero-bullet,
-.hero-pill {
+.hero-bullet{
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 36px !important;
+  padding: 8px 14px !important;
+  border-radius: 999px !important;
   white-space: normal !important;
-  line-height: 1.2;
+  line-height: 1.2 !important;
 }
 
-/* Corrige área de CTA */
-.hero-cta-wrapper,
-.hero-cta {
+/* 2) Bloco do CTA: trava largura máxima e organiza */
+.hero-cta-wrapper{
   display: grid !important;
   gap: 14px !important;
+  max-width: 560px !important; /* evita ficar “espalhado” no desktop */
 }
 
-/* Linha dos botões */
-.cta-subrow,
-.hero-actions {
-  display: flex !important;
-  flex-wrap: wrap !important;
+/* Botão principal: largura uniforme */
+.cta-btn{
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  min-height: 54px !important;
+  padding: 14px 18px !important;
+  line-height: 1.15 !important;
+  text-align: center !important;
+}
+
+/* 3) Linha dos 2 botões ghost: vira GRID no desktop (2 colunas iguais) */
+.cta-subrow{
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   gap: 12px !important;
+  align-items: stretch !important;
 }
 
-/* Botão principal */
-.cta-btn,
-.btn-primary {
-  flex: 0 1 340px !important;
-  align-self: flex-start !important;
+/* Ghosts: mesma altura/forma/centralização */
+.ghost-btn{
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  min-height: 48px !important;
+  padding: 12px 14px !important;
+  line-height: 1.15 !important;
+  text-align: center !important;
+  white-space: normal !important;
 }
 
-/* Botões secundários */
-.ghost-btn,
-.btn-secondary {
-  flex: 0 1 240px !important;
-}
-
-/* MOBILE */
-@media (max-width: 640px) {
-  .cta-subrow,
-  .hero-actions {
-    flex-direction: column !important;
-  }
-
-  .cta-btn,
-  .ghost-btn,
-  .btn-primary,
-  .btn-secondary {
-    width: 100% !important;
-    white-space: normal !important;
-  }
+/* 4) Mobile: ghosts ficam 1 embaixo do outro (100% largura) */
+@media (max-width: 640px){
+  .hero-cta-wrapper{ max-width: 100% !important; }
+  .cta-subrow{
+    grid-template-columns: 1fr !important;
 }
 
   </style>
