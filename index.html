@@ -612,47 +612,96 @@ footer{ text-align: center; padding: 30px 18px 44px; font-size: 0.88rem; color: 
 </footer>
   
 <script>
-  <script>
-const form = document.getElementById("leadForm");
-const submitBtn = document.getElementById("submitBtn");
-const ENDPOINT = "https://script.google.com/macros/s/AKfycby9jNVfUTBcKMb_zkJ01mfbWN2ku-_YnCXxPSkv5kqrV3JOo_JaWSV-7E2As8qs7icHTQ/exec";
+  const form = document.getElementById("leadForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const ENDPOINT = "https://script.google.com/macros/s/AKfycby9jNVfUTBcKMb_zkJ01mfbWN2ku-_YnCXxPSkv5kqrV3JOo_JaWSV-7E2As8qs7icHTQ/exec";
+  const THANK_YOU_URL = "https://www.senaecaetano.com.br/obrigado";
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  submitBtn.disabled = true;
-  submitBtn.textContent = "Enviando...";
-
-  const payload = {
-    nome: document.getElementById("nome").value,
-    whatsapp: document.getElementById("whatsapp").value.replace(/\D/g, ""),
-    email: document.getElementById("email").value
-  };
-
-  try {
-    const res = await fetch(ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
+  function fillTrackingFields() {
+    const params = new URLSearchParams(window.location.search);
+    ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach((key) => {
+      const field = document.getElementById(key);
+      if (field && !field.value) {
+        field.value = params.get(key) || "";
+      }
     });
 
-    const data = await res.json();
-
-    if (data.ok && data.redirect) {
-      window.location.href = data.redirect;
-      return;
+    const referrerField = document.getElementById("referrer");
+    if (referrerField && !referrerField.value) {
+      referrerField.value = document.referrer || "";
     }
 
-    throw new Error("Resposta inválida");
-
-  } catch (err) {
-    alert("Não conseguimos enviar seus dados agora. Tente novamente.");
-    submitBtn.disabled = false;
-    submitBtn.textContent = "Quero avançar agora";
+    const userAgentField = document.getElementById("user_agent");
+    if (userAgentField && !userAgentField.value) {
+      userAgentField.value = navigator.userAgent || "";
+    }
   }
-});
-</script>
 
+  function buildPayload() {
+    return {
+      nome: document.getElementById("nome").value,
+      whatsapp: document.getElementById("whatsapp").value.replace(/\D/g, ""),
+      email: document.getElementById("email").value,
+      audience: document.querySelector("input[name='audience']")?.value || "",
+      page: document.querySelector("input[name='page']")?.value || "",
+      utm_source: document.getElementById("utm_source")?.value || "",
+      utm_medium: document.getElementById("utm_medium")?.value || "",
+      utm_campaign: document.getElementById("utm_campaign")?.value || "",
+      utm_content: document.getElementById("utm_content")?.value || "",
+      utm_term: document.getElementById("utm_term")?.value || "",
+      referrer: document.getElementById("referrer")?.value || document.referrer || "",
+      user_agent: document.getElementById("user_agent")?.value || navigator.userAgent || ""
+    };
+  }
+
+  fillTrackingFields();
+
+  form.addEventListener("submit", handleSubmit);
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Enviando...";
+
+    const payload = buildPayload();
+    const params = new URLSearchParams();
+    Object.entries(payload).forEach(([key, value]) => params.append(key, value ?? ""));
+
+    try {
+      const response = await fetch(ENDPOINT, { method: "POST", body: params });
+      const responseText = await response.text();
+
+      console.log("Submit status:", response.status);
+      console.log("Raw response text:", responseText);
+
+      let data = null;
+      try {
+        data = JSON.parse(responseText);
+        console.log("Parsed response:", data);
+      } catch (parseError) {
+        console.warn("Não foi possível interpretar a resposta como JSON", parseError);
+      }
+
+      if (!response.ok) {
+        console.error(`Erro HTTP ${response.status}:`, responseText);
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      if (data?.ok === true) {
+        const redirectUrl = data.redirect || THANK_YOU_URL;
+        window.location.href = redirectUrl;
+        return;
+      }
+
+      throw new Error("Resposta inválida ou sem redirect");
+    } catch (err) {
+      console.error("Erro ao enviar formulário:", err);
+      alert("Não conseguimos enviar seus dados agora. Tente novamente.");
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Quero avançar agora";
+    }
+  }
 </script>
 </body>
 </html>
