@@ -4,39 +4,128 @@
   <meta charset="UTF-8">
   <title>Antes do Sim | Sena & Caetano</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Landing page oficial da Sena & Caetano para noivos. Envie seus dados e avance para o passo seguinte com nossa equipe técnica." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
+  <div class="wrapper">
+    <header>
+      <div class="brand">
+        <div class="badge">S&amp;C</div>
+        <div>
+          <div style="font-weight:900;">Sena &amp; Caetano</div>
+          <div style="color:#6a5c83; font-size:13px;">REMOV-C™ • Noivos</div>
+        </div>
+      </div>
+      <div style="color:#6a5c83; font-size:14px; font-weight:600;">Atendimento humano e técnico, sem robôs.</div>
+    </header>
 
-<form id="leadForm"
-  method="POST"
-  action="https://script.google.com/macros/s/AKfycby9jNVfUTBcKMb_zkJ01mfbWN2ku-_YnCXxPSkv5kqrV3JOo_JaWSV-7E2As8qs7icHTQ/exec">
-  <input type="hidden" name="redirect" id="redirectInput">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Programa REMOV-C™ para noivos</div>
+        <h1>Antes do “sim”: organize seu CPF/CNPJ com respaldo técnico.</h1>
+        <p>Envie seus dados para receber o passo a passo correto, com análise rápida, contato humano e direcionamento para contratação segura. Sem atalhos e sem enrolação.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#lead">Quero avançar agora</a>
+          <a class="btn btn-ghost" href="https://wa.me/5561984301988" target="_blank" rel="noopener">Falar no WhatsApp</a>
+        </div>
+        <div class="trust">
+          <span>Referências técnicas:</span>
+          <img class="trust-logo" src="./assets/img/serasa-consumidor.jpg" alt="Serasa Consumidor">
+          <img class="trust-logo" src="./assets/img/spc-brasil.jpg" alt="SPC Brasil">
+          <img class="trust-logo" src="./assets/img/cenprot.png" alt="Cenprot">
+          <img class="trust-logo" src="./assets/img/quod.png" alt="Quod">
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="./assets/img/hero-casal.jpg" alt="Casal se preparando para o casamento">
+      </div>
+    </section>
 
-  <input type="text" name="nome" placeholder="Seu nome" required>
-  <input type="tel" name="whatsapp" placeholder="WhatsApp" required>
-  <input type="email" name="email" placeholder="E-mail" required>
-  <button type="submit">Quero avançar</button>
-</form>
+    <section class="section">
+      <div class="cards">
+        <div class="card">
+          <h3>Diagnóstico sem burocracia</h3>
+          <p>Conte seu cenário e receba a leitura correta de restrições, ações emergenciais e caminhos possíveis para o casamento acontecer sem bloqueios.</p>
+        </div>
+        <div class="card">
+          <h3>Equipe com responsabilidade</h3>
+          <p>Atendimento técnico conduzido por especialistas que lidam diariamente com casos de CPF e CNPJ para eventos e contratos.</p>
+        </div>
+        <div class="card">
+          <h3>Rapidez com segurança</h3>
+          <p>Você sai com a mensagem pronta e o canal direto no WhatsApp para não perder tempo nem correr riscos com informações desencontradas.</p>
+        </div>
+      </div>
+    </section>
 
-<script>
-  // Preenche o redirect absoluto para o Google Apps Script e salva os dados localmente sem interromper o POST nativo
-  (function() {
-    const form = document.getElementById("leadForm");
-    const redirectInput = document.getElementById("redirectInput");
-    if (redirectInput) {
-      redirectInput.value = new URL("/obrigado/", window.location.href).href;
-    }
+    <section class="form-section" id="lead">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+        <div>
+          <div style="font-weight:900; font-size:1.2rem;">Avance para o passo seguinte</div>
+          <div style="color:#6a5c83;">Preencha seus dados e aguarde o retorno no WhatsApp ou e-mail.</div>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; color:#6a5c83; font-size:13px;">
+          <div style="width:10px; height:10px; border-radius:99px; background:#37c972; box-shadow:0 0 0 6px rgba(55,201,114,0.18);"></div>
+          Resposta rápida e personalizada
+        </div>
+      </div>
 
-    form.addEventListener("submit", () => {
-      try {
-        const data = Object.fromEntries(new FormData(form).entries());
-        localStorage.setItem("sc_lead_noivos", JSON.stringify(data));
-      } catch (err) {
-        // ignora erros de armazenamento
+      <form id="leadForm" method="POST" action="https://script.google.com/macros/s/AKfycby9jNVfUTBcKMb_zkJ01mfbWN2ku-_YnCXxPSkv5kqrV3JOo_JaWSV-7E2As8qs7icHTQ/exec">
+        <input type="hidden" name="redirect" id="redirectInput">
+
+        <div class="field">
+          <label for="nome">Seu nome completo</label>
+          <input type="text" id="nome" name="nome" placeholder="Ex.: Ana e João" required>
+        </div>
+
+        <div class="field">
+          <label for="whatsapp">WhatsApp</label>
+          <input type="tel" id="whatsapp" name="whatsapp" placeholder="DDD + número" required>
+        </div>
+
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+        </div>
+
+        <div class="field">
+          <label for="cenario">Cenário em 1 frase (opcional)</label>
+          <input type="text" id="cenario" name="cenario" placeholder="Ex.: restrições no CPF para fechar o buffet">
+        </div>
+
+        <div class="field" style="grid-column: 1 / -1;">
+          <button type="submit">Quero receber o passo seguinte</button>
+        </div>
+
+        <div class="form-footnote">Ao enviar, você autoriza contato da equipe Sena &amp; Caetano para condução técnica do seu caso.</div>
+      </form>
+    </section>
+  </div>
+
+  <script>
+    (function () {
+      const form = document.getElementById('leadForm');
+      const redirectInput = document.getElementById('redirectInput');
+
+      if (redirectInput) {
+        redirectInput.value = new URL('/obrigado/index.html', window.location.origin).href;
       }
-    });
-  })();
-</script>
 
+      if (form) {
+        form.addEventListener('submit', () => {
+          try {
+            const data = Object.fromEntries(new FormData(form).entries());
+            localStorage.setItem('sc_lead_noivos', JSON.stringify(data));
+          } catch (err) {
+            // ignore storage errors to avoid blocking the native POST
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
