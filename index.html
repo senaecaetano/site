@@ -613,6 +613,7 @@ footer{ text-align: center; padding: 30px 18px 44px; font-size: 0.88rem; color: 
 <script>
 const THANK_YOU_URL = "https://www.senaecaetano.com.br/obrigado";
 const STORAGE_KEY = "sc_lead_noivos";
+const ENDPOINT = "https://script.google.com/macros/s/AKfycby9jNVfUTBcKMb_zkJ01mfbWN2ku-_YnCXxPSkv5kqrV3JOo_JaWSV-7E2As8qs7icHTQ/exec";
 function onlyDigits(s){ return (s || "").replace(/\D+/g, ""); }
 function getUTM(name){ const u = new URL(window.location.href); return u.searchParams.get(name) || ""; }
 function setHidden(id, val){ const el = document.getElementById(id); if (el) el.value = val || ""; }
@@ -627,38 +628,56 @@ function setHidden(id, val){ const el = document.getElementById(id); if (el) el.
 })();
 const form = document.getElementById("leadForm");
 const submitBtn = document.getElementById("submitBtn");
-form.addEventListener("submit", (event) => {
+async function handleSubmit(event){
+  event.preventDefault();
   if (!form.checkValidity()) {
-    event.preventDefault();
     form.reportValidity();
     return;
   }
   const nome = (document.getElementById("nome").value || "").trim();
   const whatsappInput = document.getElementById("whatsapp");
-  const email = (document.getElementById("email").value || "").trim();
   whatsappInput.value = onlyDigits(whatsappInput.value || "");
+  const email = (document.getElementById("email").value || "").trim();
   submitBtn.disabled = true;
   submitBtn.textContent = "Enviando…";
+  const payload = {
+    nome,
+    whatsapp: whatsappInput.value,
+    email,
+    audience: document.querySelector("input[name='audience']")?.value || "",
+    page: document.querySelector("input[name='page']")?.value || "",
+    utm_source: document.getElementById("utm_source").value,
+    utm_medium: document.getElementById("utm_medium").value,
+    utm_campaign: document.getElementById("utm_campaign").value,
+    utm_content: document.getElementById("utm_content").value,
+    utm_term: document.getElementById("utm_term").value,
+    referrer: document.getElementById("referrer").value,
+    user_agent: document.getElementById("user_agent").value
+  };
   try { fbq && fbq("track", "Lead"); } catch(e) {}
   try {
-    const lead = {
-      nome,
-      whatsapp: whatsappInput.value,
-      email,
-      utm_source: document.getElementById("utm_source").value,
-      utm_medium: document.getElementById("utm_medium").value,
-      utm_campaign: document.getElementById("utm_campaign").value,
-      utm_content: document.getElementById("utm_content").value,
-      utm_term: document.getElementById("utm_term").value,
-      referrer: document.getElementById("referrer").value,
-      user_agent: document.getElementById("user_agent").value
-    };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(lead));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
   } catch(e) {}
-  setTimeout(() => {
-    window.location.href = THANK_YOU_URL;
-  }, 9000);
-});
+  try {
+    const response = await fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+    const data = await response.json().catch(() => ({}));
+    if (response.ok && data.ok) {
+      window.location.href = data.redirect || THANK_YOU_URL;
+      return;
+    }
+    throw new Error(data.error || `Erro ${response.status}`);
+  } catch (err) {
+    console.error("Falha ao enviar lead", err);
+    alert("Não conseguimos enviar seus dados agora. Por favor, tente novamente em instantes.");
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Quero avançar agora";
+  }
+}
+form.addEventListener("submit", handleSubmit);
 </script>
 </body>
 </html>
