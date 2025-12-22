@@ -579,12 +579,14 @@ footer{ text-align:center; padding: 30px 18px 44px; font-size: 0.88rem; color: #
   <div class="topbar-inner">
     <div class="brand">
       <div class="brand-badge">S&amp;C</div>
-      <div>
+      <div class="brand-text">
         <div class="brand-name">Sena &amp; Caetano</div>
         <div class="brand-sub">Consultoria Técnica Financeira • REMOV-C™</div>
       </div>
     </div>
-    <nav class="nav" aria-label="Navegação">
+
+    <!-- Desktop nav -->
+    <nav class="nav nav-desktop" aria-label="Navegação">
       <a href="#dor">Dores</a>
       <a href="#aspiracoes">Possibilidades</a>
       <a href="#verdade">Transparência</a>
@@ -592,8 +594,24 @@ footer{ text-align:center; padding: 30px 18px 44px; font-size: 0.88rem; color: #
       <a href="#faq">FAQ</a>
       <a href="#comprar" class="cta-mini">Comprar agora</a>
     </nav>
+
+    <!-- Mobile toggle -->
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMobile">
+      Menu
+    </button>
   </div>
+
+  <!-- Mobile menu -->
+  <nav class="nav nav-mobile" id="navMobile" aria-label="Navegação mobile">
+    <a href="#dor">Dores</a>
+    <a href="#aspiracoes">Possibilidades</a>
+    <a href="#verdade">Transparência</a>
+    <a href="#provas">Depoimentos</a>
+    <a href="#faq">FAQ</a>
+    <a href="#comprar" class="cta-mini">Comprar agora</a>
+  </nav>
 </header>
+
 
 <section class="hero" id="top">
   <div class="hero-inner">
