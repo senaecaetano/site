@@ -1,1117 +1,809 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>S&C | Consultoria Técnica Financeira para Regularização de CPF/CNPJ</title>
+  <meta name="description" content="Consultoria técnica financeira para regularização de CPF/CNPJ, remoção de apontamentos e atualização cadastral. Processo documentado, comunicação clara e atendimento direto no WhatsApp." />
+  <meta name="theme-color" content="#070A14" />
 
-  <title>Ano Novo 2026: Destrave CPF/CNPJ e Volte a Ter Crédito | Sena &amp; Caetano</title>
-  <meta name="description" content="Campanha de Ano Novo para trabalhadores e empresários com CPF/CNPJ com restrições. Entenda dores do nome sujo, possibilidades do nome limpo e como o REMOV-C™ atua como protocolo técnico com contrato e responsabilidade." />
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- ========= META PIXEL ========= -->
-  <script>
-    !(function (f, b, e, v, n, t, s) {
-      if (f.fbq) return;
-      n = f.fbq = function () {
-        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-      };
-      if (!f._fbq) f._fbq = n;
-      n.push = n;
-      n.loaded = !0;
-      n.version = "2.0";
-      n.queue = [];
-      t = b.createElement(e);
-      t.async = !0;
-      t.src = "https://connect.facebook.net/en_US/fbevents.js";
-      s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s);
-    })(window, document, "script");
-    fbq("init", "1168676065407223");
-    fbq("track", "PageView");
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1168676065407223&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- ========= FIM META PIXEL ========= -->
-
-  <meta name="facebook-domain-verification" content="7ih5mpml3i4r7d7owdqkvgwz2lmbwd" />
-
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W7S77P5D');
-  </script>
-  <!-- End Google Tag Manager -->
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg: #0b1220;
-      --bg-soft: #0f1b33;
-      --card: rgba(255,255,255,0.06);
-      --card-2: rgba(255,255,255,0.08);
-      --border: rgba(255,255,255,0.12);
+      --bg0:#070A14;
+      --bg1:#0B1020;
+      --bg2:#070A14;
 
-      --text: #f3f6ff;
-      --text-soft: rgba(243,246,255,0.78);
+      --card: rgba(255,255,255,.06);
+      --stroke: rgba(255,255,255,.12);
 
-      --brand: #60a5fa; /* azul */
-      --brand-2: #22c55e; /* verde (pontos/ok) */
-      --accent: #fbbf24;  /* dourado (cta) */
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --muted2: rgba(255,255,255,.60);
 
-      --shadow: 0 20px 60px rgba(0,0,0,0.35);
-      --ring: 0 0 0 4px rgba(96,165,250,0.22);
+      --brand:#4da3ff;
+      --brand2:#76d1ff;
+      --ok:#59ffa8;
 
+      --shadow: 0 18px 55px rgba(0,0,0,.45);
       --radius: 18px;
-      --radius-lg: 26px;
 
       --max: 1120px;
     }
 
-    *{ box-sizing: border-box; }
-    html{ scroll-behavior: smooth; }
+    *{ box-sizing:border-box; }
+    html, body { height:100%; }
     body{
       margin:0;
-      font-family: "Inter", sans-serif;
-      background:
-        radial-gradient(900px 520px at 20% -10%, rgba(96,165,250,0.25), transparent 60%),
-        radial-gradient(820px 520px at 90% 0%, rgba(34,197,94,0.14), transparent 55%),
-        radial-gradient(900px 700px at 50% 120%, rgba(251,191,36,0.10), transparent 60%),
-        linear-gradient(180deg, #070b14 0%, #0b1220 40%, #070b14 100%);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--text);
-      line-height: 1.6;
+      background:
+        radial-gradient(1100px 650px at 15% 0%, rgba(77,163,255,.25), transparent 60%),
+        radial-gradient(900px 600px at 90% 10%, rgba(118,209,255,.18), transparent 55%),
+        linear-gradient(180deg, var(--bg0) 0%, var(--bg1) 45%, var(--bg2) 100%);
     }
 
-    a{ color: inherit; }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width: var(--max); margin:0 auto; padding:0 18px; }
 
     /* Topbar */
     .topbar{
-      position: sticky;
-      top:0;
-      z-index: 50;
+      position: sticky; top:0; z-index:20;
       backdrop-filter: blur(10px);
-      background: rgba(7,11,20,0.72);
-      border-bottom: 1px solid var(--border);
+      background: rgba(7,10,20,.55);
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
-    .topbar-inner{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 12px 18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+    .topbar .inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 12px 0;
       gap: 12px;
     }
+
     .brand{
-      display:flex;
-      align-items:center;
-      gap: 10px;
-      min-width: 220px;
+      display:flex; align-items:center; gap:10px;
+      font-weight: 800;
+      letter-spacing: .2px;
+      min-width: 180px;
     }
-    .brand-badge{
-      width: 38px; height: 38px;
-      border-radius: 14px;
-      display:grid; place-items:center;
-      font-weight: 900;
-      letter-spacing: 0.02em;
-      color: #08101e;
-      background: linear-gradient(135deg, rgba(96,165,250,1), rgba(251,191,36,0.95));
-      box-shadow: 0 14px 30px rgba(0,0,0,0.30);
+    .logo{
+      width:34px; height:34px; border-radius:10px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 8px 22px rgba(77,163,255,.25);
     }
-    .brand-name{
-      font-weight: 900;
-      line-height: 1.1;
-    }
-    .brand-sub{
-      font-size: 0.82rem;
-      color: var(--text-soft);
+    .brand small{
+      display:block;
+      font-weight: 600;
+      color: var(--muted2);
+      letter-spacing: 0;
       margin-top: 2px;
-      line-height: 1.2;
+      font-size: 12px;
     }
 
     .nav{
-      display:flex;
-      align-items:center;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+      display:flex; align-items:center; gap:18px;
+      color: var(--muted);
+      font-size: 14px;
     }
-    .nav a{
-      font-size: 0.88rem;
-      text-decoration: none;
-      color: rgba(243,246,255,0.86);
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.0);
-      transition: all 0.18s ease;
-      white-space: nowrap;
-    }
-    .nav a:hover{
-      border-color: rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.06);
-    }
-    .nav .cta-mini{
-      border: none;
-      font-weight: 900;
-      color: #08101e;
-      background: linear-gradient(135deg, rgba(251,191,36,1), rgba(96,165,250,0.95));
-      box-shadow: 0 14px 30px rgba(0,0,0,0.30);
-    }
-    .nav .cta-mini:hover{ transform: translateY(-1px); }
+    .nav a{ opacity:.9; }
+    .nav a:hover{ opacity:1; color:#fff; }
 
-    /* Layout helpers */
-    .wrap{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 18px;
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.06);
+      color:#fff;
+      font-weight: 700;
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      user-select:none;
+      white-space:nowrap;
     }
-    .section{
-      padding: 56px 0;
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.18);
     }
-    .section-header{
-      text-align:center;
-      margin-bottom: 24px;
+    .btn.primary{
+      border: 1px solid rgba(77,163,255,.45);
+      background: linear-gradient(135deg, rgba(77,163,255,.92), rgba(118,209,255,.82));
+      color:#061024;
+      box-shadow: 0 14px 40px rgba(77,163,255,.25);
     }
-    .kicker{
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.78rem;
-      color: rgba(96,165,250,0.92);
-      margin-bottom: 8px;
-    }
-    .h2{
-      font-family: "Playfair Display", serif;
-      font-size: clamp(1.7rem, 2.6vw, 2.2rem);
-      margin: 0 0 10px;
-      letter-spacing: 0.01em;
-    }
-    .sub{
-      max-width: 860px;
-      margin: 0 auto;
-      color: var(--text-soft);
-      font-size: 1.02rem;
-    }
+    .btn.primary:hover{ filter: brightness(1.02); }
 
-    /* Cards grid */
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-      margin-top: 22px;
-    }
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px;
-      position: relative;
-      overflow:hidden;
-    }
-    .card::before{
-      content:"";
-      position:absolute;
-      inset:auto -60px -70px auto;
-      width: 180px; height: 180px;
-      border-radius: 999px;
-      background: radial-gradient(circle, rgba(96,165,250,0.20), transparent 60%);
-      filter: blur(8px);
-      pointer-events:none;
-    }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap: 8px;
-      font-size: 0.82rem;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.06);
-      color: rgba(243,246,255,0.90);
-      margin-bottom: 10px;
-    }
-    .dot{
-      width: 9px; height: 9px;
-      border-radius: 999px;
-      background: var(--brand-2);
-      box-shadow: 0 0 0 4px rgba(34,197,94,0.18);
-      flex: 0 0 auto;
-    }
-    .card h3{
-      margin: 0 0 8px;
-      font-size: 1.05rem;
-      line-height: 1.25;
-    }
-    .card p{
-      margin:0;
-      color: rgba(243,246,255,0.78);
-      font-size: 0.95rem;
+    .btn.ghost{
+      background: transparent;
+      border-color: rgba(255,255,255,.14);
     }
 
     /* Hero */
-    .hero{
-      padding: 72px 0 42px;
-    }
-    .hero-layout{
+    .hero{ padding: 54px 0 10px; }
+    .hero-grid{
       display:grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-      align-items:center;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 22px;
+      align-items: start;
     }
-    @media (min-width: 980px){
-      .hero-layout{ grid-template-columns: 1.15fr 0.85fr; gap: 26px; }
-    }
-    .hero-badge{
-      display:inline-flex;
-      align-items:center;
-      gap: 10px;
+
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
       padding: 8px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.06);
-      color: rgba(243,246,255,0.92);
-      margin-bottom: 12px;
-      font-size: 0.92rem;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-size: 13px;
     }
-    .hero-badge .dot{ background: var(--accent); box-shadow: 0 0 0 4px rgba(251,191,36,0.18); }
-    .h1{
+    .k-dot{
+      width:7px; height:7px; border-radius: 999px;
+      background: var(--ok);
+      box-shadow: 0 0 18px rgba(89,255,168,.35);
+    }
+
+    .h-title{
+      margin: 14px 0 10px;
       font-family: "Playfair Display", serif;
-      font-size: clamp(2.05rem, 4.2vw, 3.1rem);
-      margin: 0 0 12px;
-      line-height: 1.12;
-      letter-spacing: 0.02em;
+      font-size: clamp(30px, 4.2vw, 46px);
+      line-height: 1.07;
+      letter-spacing: -0.5px;
     }
-    .highlight{
-      color: rgba(251,191,36,0.98);
-      text-shadow: 0 0 18px rgba(0,0,0,0.35);
-    }
-    .hero-lead{
-      color: rgba(243,246,255,0.84);
-      font-size: 1.05rem;
-      margin: 0 0 12px;
-      max-width: 820px;
-    }
-    .hero-bullets{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 12px 0 18px;
-    }
-    .hero-bullet{
-      display:inline-flex;
-      align-items:center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.06);
-      font-size: 0.92rem;
-      color: rgba(243,246,255,0.90);
-    }
-    .hero-bullet .dot{
-      background: var(--brand);
-      box-shadow: 0 0 0 4px rgba(96,165,250,0.18);
+    .lead{
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+      max-width: 62ch;
     }
 
-    /* Buttons */
-    .btn-row{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items:center;
-      margin-top: 8px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap: 10px;
-      padding: 14px 18px;
-      border-radius: 999px;
-      font-weight: 900;
-      text-decoration:none;
-      border: 1px solid rgba(255,255,255,0.12);
-      cursor:pointer;
-      transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
-      user-select:none;
-      white-space: nowrap;
-    }
-    .btn-primary{
-      color: #08101e;
-      background: linear-gradient(135deg, rgba(251,191,36,1), rgba(96,165,250,0.95));
-      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-      border: none;
-    }
-    .btn-primary:hover{ transform: translateY(-1px); box-shadow: 0 22px 48px rgba(0,0,0,0.42); }
-    .btn-ghost{
-      color: rgba(243,246,255,0.92);
-      background: rgba(255,255,255,0.06);
-    }
-    .btn-ghost:hover{ transform: translateY(-1px); background: rgba(255,255,255,0.09); }
-
-    .note{
-      margin-top: 10px;
-      color: rgba(243,246,255,0.74);
-      font-size: 0.9rem;
-      max-width: 900px;
+    .hero-ctas{
+      margin-top: 18px;
+      display:flex; gap: 12px; flex-wrap: wrap;
+      align-items: center;
     }
 
-    /* Right hero card */
-    .hero-panel{
-      background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.06));
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: var(--radius-lg);
+    .trust{
+      margin-top: 18px;
+      display:flex; gap: 14px; flex-wrap: wrap;
+      color: var(--muted2);
+      font-size: 13px;
+    }
+    .trust b{ color:#fff; font-weight: 800; }
+
+    /* Side panel */
+    .panel{
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      border-radius: var(--radius);
       box-shadow: var(--shadow);
       overflow:hidden;
-      padding: 16px;
-      position: relative;
     }
-    .hero-panel::before{
-      content:"";
-      position:absolute;
-      width: 240px; height: 240px;
+    .panel .head{
+      padding: 16px 16px 12px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      display:flex; justify-content:space-between; align-items:center;
+      gap: 10px;
+    }
+    .panel .head strong{ font-size: 14px; }
+    .badge{
+      padding: 6px 10px;
       border-radius: 999px;
-      background: radial-gradient(circle, rgba(251,191,36,0.16), transparent 62%);
-      filter: blur(10px);
-      top: -90px; right: -90px;
-      pointer-events:none;
+      background: rgba(77,163,255,.12);
+      border: 1px solid rgba(77,163,255,.25);
+      color: rgba(255,255,255,.86);
+      font-size: 12px;
+      white-space: nowrap;
     }
-    .hero-image{
-      width: 100%;
-      height: auto;
-      border-radius: 20px;
-      display:block;
-      object-fit: cover;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(0,0,0,0.20);
+    .panel .body{ padding: 14px 16px 16px; }
+
+    .mini-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
     }
     .mini{
-      margin-top: 10px;
-      color: rgba(243,246,255,0.78);
-      font-size: 0.88rem;
-      text-align:center;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      border-radius: 14px;
+      padding: 12px;
+    }
+    .mini .t{ font-size: 12px; color: var(--muted2); }
+    .mini .v{ margin-top: 6px; font-weight: 800; font-size: 16px; }
+
+    .divider{ height: 1px; background: rgba(255,255,255,.10); margin: 14px 0; }
+
+    .bullets{ margin:0; padding:0; list-style:none; display:grid; gap:10px; }
+    .bullets li{
+      display:flex; gap:10px; align-items:flex-start;
+      color: var(--muted);
+      line-height: 1.35;
+      font-size: 14px;
+    }
+    .check{
+      width:18px; height:18px; border-radius: 6px;
+      background: rgba(89,255,168,.14);
+      border: 1px solid rgba(89,255,168,.25);
+      display:inline-flex; align-items:center; justify-content:center;
+      flex: 0 0 18px;
+      margin-top: 1px;
+      font-weight: 900;
+      font-size: 12px;
+      color: rgba(255,255,255,.9);
+    }
+
+    /* Section */
+    section{ padding: 46px 0; }
+    .section-title{
+      display:flex; justify-content:space-between; align-items:flex-end;
+      gap:18px; margin-bottom: 18px;
+    }
+    .section-title h2{
+      margin:0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(22px, 3vw, 30px);
+      letter-spacing: -0.3px;
+    }
+    .section-title p{
+      margin:0;
+      color: var(--muted);
+      max-width: 68ch;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .card{
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.25);
+      min-height: 150px;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: var(--muted2);
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+    .card h3{ margin: 0 0 8px; font-size: 16px; }
+    .card p{ margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+
+    /* Split section */
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      align-items: stretch;
+    }
+    .box{
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.25);
+    }
+    .box h3{ margin: 0 0 10px; font-size: 16px; }
+    .list{
+      margin:0; padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
     }
 
     /* Steps */
     .steps{
       display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-      margin-top: 22px;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
     }
     .step{
-      padding: 18px;
+      display:flex; gap:12px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
       border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.06);
-      box-shadow: var(--shadow);
-      position:relative;
-      overflow:hidden;
+      padding: 16px;
     }
-    .step .n{
-      width: 44px; height: 44px;
-      border-radius: 16px;
-      display:grid; place-items:center;
+    .num{
+      width:34px; height:34px; border-radius: 12px;
+      background: rgba(77,163,255,.14);
+      border: 1px solid rgba(77,163,255,.25);
+      display:flex; align-items:center; justify-content:center;
       font-weight: 900;
-      color: #08101e;
-      background: linear-gradient(135deg, rgba(96,165,250,1), rgba(34,197,94,0.95));
-      box-shadow: 0 16px 34px rgba(0,0,0,0.30);
-      margin-bottom: 10px;
+      flex: 0 0 34px;
+      color: rgba(255,255,255,.92);
     }
-    .step h3{ margin: 0 0 8px; font-size: 1.08rem; }
-    .step p{ margin:0; color: rgba(243,246,255,0.78); font-size: 0.95rem; }
+    .step h3{ margin:0 0 6px; font-size: 16px; }
+    .step p{ margin:0; color: var(--muted); font-size: 14px; line-height: 1.55; }
 
-    /* Trust logos */
-    .trust{
-      padding: 14px 0 0;
-      text-align:center;
+    /* Proof */
+    .quotes{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
     }
-    .trust p{
-      margin: 0 0 12px;
-      color: rgba(243,246,255,0.72);
-      font-size: 0.92rem;
+    .quote{
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      border-radius: var(--radius);
+      padding: 16px;
     }
-    .logos{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 22px;
-      justify-content:center;
-      align-items:center;
-      opacity: 0.92;
-    }
-    .logos img{
-      max-height: 40px;
-      width: auto;
-      object-fit: contain;
-      filter: grayscale(0.12) contrast(1.05);
-    }
-    @media (max-width: 600px){
-      .logos img{ max-height: 32px; }
-    }
+    .quote p{ margin: 0 0 10px; color: rgba(255,255,255,.86); line-height: 1.55; font-size: 14px; }
+    .quote .who{ color: var(--muted2); font-size: 13px; }
 
     /* FAQ */
     .faq{
-      background: rgba(255,255,255,0.03);
-      border-top: 1px solid rgba(255,255,255,0.10);
-      border-bottom: 1px solid rgba(255,255,255,0.10);
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
     }
-    .faq-list{
-      max-width: 980px;
-      margin: 22px auto 0;
-      padding: 0 18px;
-    }
-    details.faq-item{
+    details{
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
       border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.06);
       padding: 12px 14px;
-      margin-bottom: 10px;
-      box-shadow: var(--shadow);
     }
-    details.faq-item[open]{
-      border-color: rgba(96,165,250,0.35);
-      box-shadow: 0 24px 70px rgba(0,0,0,0.40);
-    }
-    details.faq-item summary{
-      list-style:none;
+    summary{
       cursor:pointer;
-      font-weight: 900;
-      font-size: 0.98rem;
+      font-weight: 800;
+      color: rgba(255,255,255,.92);
+      list-style:none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    details p{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* CTA band */
+    .cta{
+      border: 1px solid rgba(77,163,255,.22);
+      background: linear-gradient(135deg, rgba(77,163,255,.14), rgba(118,209,255,.10));
+      border-radius: 22px;
+      padding: 18px;
       display:flex;
-      gap: 10px;
-      align-items:flex-start;
-      color: rgba(243,246,255,0.94);
+      justify-content: space-between;
+      gap: 14px;
+      align-items: center;
+      box-shadow: 0 16px 44px rgba(77,163,255,.16);
     }
-    details.faq-item summary::-webkit-details-marker{ display:none; }
-    .qnum{
-      font-family: "Playfair Display", serif;
-      color: rgba(96,165,250,0.95);
-      font-weight: 900;
-      flex: 0 0 auto;
-    }
-    .ans{
-      margin-top: 8px;
-      color: rgba(243,246,255,0.78);
-      font-size: 0.95rem;
-    }
+    .cta h3{ margin:0 0 6px; font-size: 18px; }
+    .cta p{ margin:0; color: var(--muted); font-size: 14px; line-height: 1.5; max-width: 78ch; }
 
-    /* Bottom CTA */
-    .cta-box{
-      max-width: 980px;
-      margin: 0 auto;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(255,255,255,0.14);
-      background: linear-gradient(135deg, rgba(96,165,250,0.12), rgba(251,191,36,0.10));
-      box-shadow: var(--shadow);
-      padding: 22px 18px;
-      text-align:center;
-      position: relative;
-      overflow:hidden;
-    }
-    .cta-box::before{
-      content:"";
-      position:absolute;
-      width: 320px; height: 320px;
-      border-radius: 999px;
-      background: radial-gradient(circle, rgba(34,197,94,0.14), transparent 62%);
-      filter: blur(12px);
-      bottom: -160px; left: -140px;
-      pointer-events:none;
-    }
-    .cta-box h3{
-      margin: 0 0 6px;
-      font-size: 1.22rem;
-    }
-    .cta-box p{
-      margin: 0 auto 14px;
-      max-width: 820px;
-      color: rgba(243,246,255,0.78);
-    }
-
+    /* Footer */
     footer{
-      padding: 28px 18px 44px;
-      text-align:center;
-      color: rgba(243,246,255,0.68);
-      font-size: 0.88rem;
+      padding: 26px 0 40px;
+      color: rgba(255,255,255,.55);
+      font-size: 13px;
     }
-    .fineprint{
-      max-width: 980px;
-      margin: 10px auto 0;
-      font-size: 0.78rem;
-      line-height: 1.55;
-      color: rgba(243,246,255,0.58);
+    footer .cols{
+      display:flex; gap: 14px; flex-wrap: wrap;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 18px;
     }
 
-    /* Toast */
-    .toast{
-      position: fixed;
-      left: 16px;
-      right: 16px;
-      bottom: 16px;
-      max-width: 560px;
-      margin: 0 auto;
-      background: rgba(10,16,30,0.92);
-      border: 1px solid rgba(255,255,255,0.16);
-      border-radius: 16px;
-      box-shadow: 0 26px 80px rgba(0,0,0,0.55);
-      padding: 12px 12px;
-      display:none;
-      z-index: 80;
-      backdrop-filter: blur(10px);
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .cards{ grid-template-columns: 1fr; }
+      .split{ grid-template-columns: 1fr; }
+      .quotes{ grid-template-columns: 1fr; }
+      .steps{ grid-template-columns: 1fr; }
+      .faq{ grid-template-columns: 1fr; }
+      .nav{ display:none; }
+      .cta{ flex-direction: column; align-items: flex-start; }
+      .brand{ min-width: unset; }
     }
-    .toast-inner{ display:flex; gap: 12px; align-items:flex-start; }
-    .toast-badge{
-      width: 42px; height: 42px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, rgba(96,165,250,1), rgba(251,191,36,0.95));
-      color: #08101e;
-      display:grid; place-items:center;
-      font-weight: 900;
-      flex: 0 0 auto;
-      box-shadow: 0 16px 38px rgba(0,0,0,0.35);
-    }
-    .toast-title{ font-weight: 900; margin: 0; color: rgba(243,246,255,0.96); }
-    .toast-text{ margin: 2px 0 0; font-size: 0.92rem; color: rgba(243,246,255,0.74); }
-    .toast-actions{ display:flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; justify-content:flex-start; }
-    .toast-actions a{
-      text-decoration:none;
-      padding: 10px 14px;
-      border-radius: 999px;
-      font-weight: 900;
-      font-size: 0.92rem;
-      display:inline-flex;
-      align-items:center;
-      gap: 8px;
-      border: 1px solid rgba(255,255,255,0.14);
-    }
-    .toast-primary{ background: linear-gradient(135deg, rgba(251,191,36,1), rgba(96,165,250,0.95)); color: #08101e; border: none; }
-    .toast-secondary{ background: rgba(255,255,255,0.06); color: rgba(243,246,255,0.88); }
   </style>
 </head>
+
 <body>
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7S77P5D"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-<header class="topbar">
-  <div class="topbar-inner">
-    <div class="brand">
-      <div class="brand-badge">S&amp;C</div>
-      <div>
-        <div class="brand-name">Sena &amp; Caetano</div>
-        <div class="brand-sub">Consultoria Técnica Financeira • REMOV-C™</div>
-      </div>
-    </div>
-
-    <nav class="nav" aria-label="Navegação">
-      <a href="#ideal">Ideal para</a>
-      <a href="#como">Como funciona</a>
-      <a href="#beneficios">Por que confiar</a>
-      <a href="#faq">FAQ</a>
-      <a href="#" class="cta-mini" id="ctaTop">Falar no WhatsApp</a>
-    </nav>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero" id="top">
-  <div class="wrap">
-    <div class="hero-layout">
-      <div>
-        <div class="hero-badge">
-          <span class="dot"></span>
-          <span>Campanha Ano Novo 2026 — para CPF/CNPJ com restrições</span>
-        </div>
-
-        <h1 class="h1">
-          Destrave seu <span class="highlight">CPF/CNPJ</span> e volte a ter crédito
-          <span class="highlight">para trabalhar, crescer e respirar.</span>
-        </h1>
-
-        <p class="hero-lead">
-          Nome restrito derruba limite, trava financiamento, dificulta aluguel, crediário e até oportunidades profissionais.
-          O REMOV-C™ é um <strong>protocolo técnico</strong>, com <strong>contrato</strong> e <strong>responsabilidade</strong>, para tratar apontamentos irregulares
-          em birôs de crédito — com transparência e critério.
-        </p>
-
-        <div class="hero-bullets">
-          <span class="hero-bullet"><span class="dot"></span>Planejamento financeiro com dignidade</span>
-          <span class="hero-bullet"><span class="dot"></span>Menos improviso, mais estabilidade</span>
-          <span class="hero-bullet"><span class="dot"></span>Organização, critério e contrato</span>
-        </div>
-
-        <div class="btn-row">
-          <a class="btn btn-primary" href="#" id="ctaHero">Quero destravar meu CPF/CNPJ agora</a>
-          <a class="btn btn-ghost" href="#como">Ver as 3 etapas</a>
-          <a class="btn btn-ghost" href="#faq">Ler o FAQ completo</a>
-        </div>
-
-        <div class="note">
-          Transparência total: a melhor forma de “limpar nome” sempre será <strong>pagar a dívida direto na origem</strong>, quando possível.
-          Quando isso não é viável — por juros, bola de neve ou inconsistências — o REMOV-C™ entra como protocolo técnico, dentro de critérios aplicáveis.
-        </div>
-
-        <div class="trust">
-          <p>Atuação técnica guiada por relatórios e informações de birôs e centrais oficiais (ex.: protestos e registros de crédito).</p>
-          <div class="logos" aria-label="Logos de referência">
-            <img src="./assets/img/cenprot.png" alt="CENPROT - Central Nacional de Protesto" />
-            <img src="./assets/img/quod.png" alt="Quod" />
-            <img src="./assets/img/serasa-consumidor.jpg" alt="Serasa Consumidor" />
-            <img src="./assets/img/spc-brasil.jpg" alt="SPC Brasil" />
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-panel" aria-label="Painel visual">
-        <!-- Troque a imagem quando quiser (ex.: um visual mais corporativo). -->
-        <img src="./assets/img/hero-casal.jpg" class="hero-image" alt="Sena &amp; Caetano - Consultoria Técnica Financeira" />
-        <div class="mini">
-          Sena &amp; Caetano — consultoria técnica responsável pelo REMOV-C™.
-        </div>
-
-        <div class="grid" style="margin-top:14px">
-          <div class="card" style="box-shadow:none">
-            <div class="pill"><span class="dot"></span><span>Fale direto</span></div>
-            <h3 style="margin:0 0 8px">WhatsApp com mensagem pronta</h3>
-            <p>Você clica e já chega com o contexto organizado para agilizar o atendimento.</p>
-          </div>
-          <div class="card" style="box-shadow:none">
-            <div class="pill"><span class="dot"></span><span>Sem teatrinho</span></div>
-            <h3 style="margin:0 0 8px">Critério e responsabilidade</h3>
-            <p>Não prometemos impossível. Trabalhamos com análise técnica, contrato e acompanhamento.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- IDEAL PARA -->
-<section class="section" id="ideal">
-  <div class="wrap">
-    <div class="section-header">
-      <div class="kicker">Quem se beneficia mais</div>
-      <h2 class="h2">Este serviço é ideal para</h2>
-      <p class="sub">
-        Trabalhadores e empresários que precisam voltar ao mercado de crédito com clareza e segurança,
-        sem cair em “soluções mágicas” e sem dar passos errados por desespero.
-      </p>
-    </div>
-
-    <div class="grid">
-      <div class="card">
-        <div class="pill"><span class="dot"></span><span>CPF/CNPJ restrito</span></div>
-        <h3>Quem está negativado e precisa recuperar crédito</h3>
-        <p>Para financiar, parcelar, negociar melhor e retomar decisões do dia a dia sem improviso.</p>
-      </div>
-
-      <div class="card">
-        <div class="pill"><span class="dot"></span><span>Vida travada</span></div>
-        <h3>Quem está sem limite e sem “nome” no mercado</h3>
-        <p>Quando o cartão não passa, o crediário não aprova e tudo vira dependência de terceiros.</p>
-      </div>
-
-      <div class="card">
-        <div class="pill"><span class="dot"></span><span>Rotina profissional</span></div>
-        <h3>Quem perdeu oportunidades por restrição</h3>
-        <p>Em alguns cenários, restrições pesam em análises e decisões de contratação e crédito.</p>
-      </div>
-
-      <div class="card">
-        <div class="pill"><span class="dot"></span><span>Empreendedores</span></div>
-        <h3>Quem precisa destravar compras, fornecedores e capital</h3>
-        <p>Crédito destravado aumenta poder de negociação e reduz custo de oportunidade.</p>
-      </div>
-    </div>
-
-    <div class="section-header" style="margin-top:18px">
-      <a class="btn btn-primary" href="#" id="ctaIdeal">Quero falar com um especialista no WhatsApp</a>
-    </div>
-  </div>
-</section>
-
-<!-- COMO FUNCIONA -->
-<section class="section" id="como">
-  <div class="wrap">
-    <div class="section-header">
-      <div class="kicker">Processo claro, simples e objetivo</div>
-      <h2 class="h2">Como funciona o REMOV-C™</h2>
-      <p class="sub">
-        Sem mistério: você entende o cenário, avança com contratação formal e, só então, a equipe entra na etapa técnica.
-      </p>
-    </div>
-
-    <div class="steps">
-      <div class="step">
-        <div class="n">1</div>
-        <h3>Diagnóstico do cenário</h3>
-        <p>Entendemos seu contexto e o que está te travando (CPF/CNPJ, apontamentos, histórico e prioridades).</p>
-      </div>
-
-      <div class="step">
-        <div class="n">2</div>
-        <h3>Rota correta: origem x “atalhos” x protocolo</h3>
-        <p>Você recebe clareza: quando pagar na origem é o ideal e quando faz sentido tratar irregularidades com critério.</p>
-      </div>
-
-      <div class="step">
-        <div class="n">3</div>
-        <h3>Contratação e etapa técnica</h3>
-        <p>Com contrato, inicia-se a atuação técnica e documental dentro dos critérios aplicáveis, com acompanhamento.</p>
-      </div>
-    </div>
-
-    <div class="section-header" style="margin-top:18px">
-      <a class="btn btn-primary" href="#" id="ctaComo">Quero iniciar pelo WhatsApp</a>
-      <div class="note" style="margin-left:auto;margin-right:auto">
-        A atuação técnica profunda acontece <strong>após a contratação</strong>. Internet é só o canal; o processo é humano, técnico e documental.
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BENEFÍCIOS / CONFIANÇA -->
-<section class="section" id="beneficios">
-  <div class="wrap">
-    <div class="section-header">
-      <div class="kicker">Por que confiar</div>
-      <h2 class="h2">Credibilidade é processo, não promessa</h2>
-      <p class="sub">
-        O que sustenta o REMOV-C™ é o padrão: critério, contrato, transparência e responsabilidade operacional.
-      </p>
-    </div>
-
-    <div class="grid">
-      <div class="card">
-        <div class="pill"><span class="dot"></span><span>Transparência</span></div>
-        <h3>Sem fantasia e sem promessa absoluta</h3>
-        <p>Trabalhamos com análise técnica e expectativa madura. Resultado depende de conformidade e trâmites dos órgãos.</p>
-      </div>
-
-      <div class="card">
-        <div class="pill"><span class="dot"></span><span>Formalização</span></div>
-        <h3>Contrato e responsabilidade</h3>
-        <p>Relação profissional, regras claras, escopo definido e condução orientada por documentação.</p>
-      </div>
-
-      <div class="card">
-        <div class="pill"><span class="dot"></span><span>Eficiência</span></div>
-        <h3>Atendimento direto e objetivo</h3>
-        <p>WhatsApp com mensagem pronta e condução sem “consulta grátis” que vira custo escondido.</p>
-      </div>
-
-      <div class="card">
-        <div class="pill"><span class="dot"></span><span>LGPD</span></div>
-        <h3>Dados protegidos</h3>
-        <p>Coletamos o necessário para atendimento. Não vendemos dados, não fazemos spam e mantemos canal de opt-out.</p>
-      </div>
-    </div>
-
-    <div class="section-header" style="margin-top:18px">
-      <a class="btn btn-primary" href="#" id="ctaBeneficios">Quero destravar minha vida financeira</a>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="section faq" id="faq">
-  <div class="section-header">
-    <div class="kicker">FAQ — Perguntas mais importantes</div>
-    <h2 class="h2">Respostas completas, maduras e com base técnica</h2>
-    <p class="sub">
-      Quanto mais claro estiver para você, mais leve fica avançar com segurança, contrato e responsabilidade.
-    </p>
-  </div>
-
-  <div class="faq-list">
-
-    <details class="faq-item">
-      <summary><span class="qnum">01.</span> Isso é confiável? Já vi muita promessa de limpar nome e não confio mais.</summary>
-      <div class="ans">
-        Sua desconfiança é justa. O REMOV-C™ não é milagre, não é atalho e nem truque. É um protocolo técnico da Sena &amp; Caetano fundamentado no Código de Defesa do Consumidor.
-        Não prometemos o impossível: analisamos critérios legais, identificamos irregularidades e aplicamos um procedimento técnico maduro.
-        Nossa estrutura é real, com CNPJ, contrato, atendimento humano e responsabilidade formal. O que fazemos é revelar onde a lei não foi cumprida — e agir dentro da lei para corrigir.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary><span class="qnum">02.</span> Por que preciso pagar a TCP agora, se o serviço só é pago depois do nome limpo?</summary>
-      <div class="ans">
-        Porque a TCP não é o pagamento do serviço. Ela cobre a base operacional inicial: análise técnica profunda, consultas aos birôs, verificação de protestos e estruturação documental.
-        O pagamento do serviço ocorre apenas após o nome limpo — isso demonstra confiança no método. A TCP inicia o processo com todos os insumos necessários.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary><span class="qnum">03.</span> E se não limpar meu nome? Vou perder o que paguei?</summary>
-      <div class="ans">
-        Não. Trabalhamos com responsabilidade e contrato. Se, com o protocolo aplicado, o resultado não vier dentro dos termos contratados, a TCP é reembolsada 100%, conforme contrato.
-        Você só paga pelo serviço quando há resultado concreto.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary><span class="qnum">04.</span> Por que nunca ouvi falar do REMOV-C™ antes?</summary>
-      <div class="ans">
-        Porque este protocolo não nasceu como produto de massa. Ele foi desenvolvido ao longo de anos por equipes técnicas e só depois passou a ser disponibilizado ao público.
-        Estamos em expansão digital estruturada, ampliando alcance e tornando acessível um método antes restrito.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary><span class="qnum">05.</span> Quanto tempo leva para destravar meu CPF/CNPJ?</summary>
-      <div class="ans">
-        Os prazos variam conforme região e dinâmica dos birôs, mas a média realista é de 35 dias úteis.
-        Em alguns locais, pode ser mais rápido; em outros, pode se estender até cerca de 90 dias úteis. Trabalhamos sempre com expectativa madura — nada de promessas irreais.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary><span class="qnum">06.</span> A empresa é séria mesmo? Vocês têm CNPJ? Quem garante?</summary>
-      <div class="ans">
-        Sim. A Sena &amp; Caetano é uma consultoria técnica formalizada, com CNPJ, contrato, estrutura documental e atendimento humano.
-        Não somos aventureiros digitais — somos uma estrutura técnica que respeita a lei e opera com metodologia própria.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary><span class="qnum">07.</span> Esse preço é barato ou caro? Tem alguma pegadinha?</summary>
-      <div class="ans">
-        O que realmente é caro é viver travado: sem crédito, pagando juros abusivos, perdendo oportunidades e com a vida financeira paralisada.
-        O REMOV-C™ foi construído para ser acessível e honesto. Não existe pegadinha: existe método técnico, maturidade e responsabilidade.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary><span class="qnum">08.</span> Eu poderia fazer isso sozinho?</summary>
-      <div class="ans">
-        Sim — especialmente pagando diretamente a dívida no credor, que é a forma tradicional.
-        Mas quando a dívida virou bola de neve ou a negativação é irregular, o consumidor fica sem saída.
-        É nesses cenários que o REMOV-C™ atua: corrigimos a forma como o seu nome foi exposto publicamente quando não seguiu a lei.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary><span class="qnum">09.</span> Como saber se isso vai funcionar para o meu caso?</summary>
-      <div class="ans">
-        Não trabalhamos com “certeza vazia”. Trabalhamos com critério técnico.
-        Se a negativação tem falhas — notificação irregular, dados inconsistentes, prazos inadequados, procedimentos incorretos — ela se torna vulnerável.
-        A análise técnica acontece dentro do protocolo contratado.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary><span class="qnum">10.</span> Limpar nome pela internet é seguro? Não confio nisso.</summary>
-      <div class="ans">
-        Nós também não confiamos em “limpa nome online” genérico. O REMOV-C™ não é botão, não é automatização e não é promessa digital.
-        A internet é só o canal de comunicação; o processo é humano, técnico e documental.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary><span class="qnum">11.</span> Como sei que vocês não vão sumir depois que eu pagar?</summary>
-      <div class="ans">
-        A Sena &amp; Caetano opera com CNPJ, contrato e reputação. Além disso, o modelo só faz sentido quando chegamos ao desfecho com você.
-        Permanecer com o cliente até o final faz parte do nosso padrão de operação.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary><span class="qnum">12.</span> Se aparecer mais dívida antiga, vou pagar de novo?</summary>
-      <div class="ans">
-        Se após a contratação surgir um apontamento que já existia, mas não estava visível na primeira consulta, e ele tiver data anterior à contratação,
-        ele é incluído no mesmo processo — sem cobrança adicional — desde que respeite os mesmos critérios técnicos do REMOV-C™.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary><span class="qnum">13.</span> E se a empresa da dívida não aceitar remover?</summary>
-      <div class="ans">
-        O que valida a negativação são os critérios legais que o órgão de crédito deve cumprir.
-        Se não atende esses critérios, ela se torna irregular independentemente da opinião do credor.
-        O REMOV-C™ atua exatamente onde a lei exige conformidade.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary><span class="qnum">14.</span> E se negativarem novamente pela mesma dívida?</summary>
-      <div class="ans">
-        Um mesmo débito não pode gerar múltiplas negativações. Se houver reinscrição sobre a mesma origem, ela já nasce irregular e pode ser contestada novamente.
-        Dentro do REMOV-C™, isso é tratado como continuação do mesmo problema.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary><span class="qnum">15.</span> Tenho muitas dívidas. Vocês conseguem remover tudo?</summary>
-      <div class="ans">
-        O volume não define a efetividade. O que determina o resultado é a legalidade de cada apontamento.
-        Seja um ou sejam vinte, o critério é o mesmo: a negativação seguiu a lei?
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary><span class="qnum">16.</span> A dívida continua existindo? Vocês só tiram do Serasa/SPC?</summary>
-      <div class="ans">
-        Sim, a dívida continua existindo. O REMOV-C™ não altera a dívida, e sim a exposição pública dela nos birôs.
-        O credor original ainda enxerga a dívida internamente, e isso é natural.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary><span class="qnum">17.</span> Meu nome está sujo há anos. Ainda tem o que fazer?</summary>
-      <div class="ans">
-        Sim. O fator determinante não é a idade da dívida, é a legalidade da negativação.
-        Dívidas antigas podem estar fora do prazo de negativação e/ou com falhas de procedimento.
-        O protocolo técnico trata desse cenário com seriedade, dentro da lei.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary><span class="qnum">18.</span> Já tentei antes e não funcionou. Por que agora funcionaria?</summary>
-      <div class="ans">
-        Porque o REMOV-C™ não é um serviço comum. É um protocolo técnico desenvolvido ao longo de anos, fundamentado na legislação que regula negativações.
-        Método raso não entrega resultado; método profundo e criterioso entrega dentro do que a lei permite.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary><span class="qnum">19.</span> E se a empresa me processar? Isso pode acontecer por causa do REMOV-C™?</summary>
-      <div class="ans">
-        O credor pode processar por uma dívida dentro do prazo legal, com ou sem REMOV-C™.
-        O REMOV-C™ não aumenta risco; ele reduz exposição indevida nos birôs ao exigir conformidade.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary><span class="qnum">20.</span> Isso pode me trazer problema com Receita Federal, Banco Central ou Justiça?</summary>
-      <div class="ans">
-        Não. O REMOV-C™ não altera dados fiscais, não interfere em declarações, não modifica registros bancários e não cria situação judicial contra você.
-        Ele atua sobre apontamentos privados em birôs de crédito, dentro dos critérios aplicáveis.
-      </div>
-    </details>
-
-  </div>
-
-  <div class="wrap" style="padding-top:22px">
-    <div class="cta-box" aria-label="Chamada final">
-      <h3>Pronto para avançar sem enrolação?</h3>
-      <p>
-        Clique no botão abaixo e fale direto no WhatsApp com uma mensagem pronta.
-        Você recebe o caminho claro: o certo, o errado e o que fazer no seu cenário — com contrato e responsabilidade.
-      </p>
-      <div class="btn-row" style="justify-content:center">
-        <a class="btn btn-primary" href="#" id="ctaBottom">Falar no WhatsApp agora</a>
-        <a class="btn btn-ghost" href="#top">Voltar ao topo</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  © 2026 Sena &amp; Caetano Consultoria Técnica Financeira — Conteúdo e metodologia protegidos legalmente.
-  <div class="fineprint">
-    Aviso: este site tem finalidade informativa e comercial. O REMOV-C™ é um protocolo técnico de consultoria financeira orientado por critérios legais aplicáveis a apontamentos em birôs de crédito.
-    Ele não substitui a quitação de dívidas quando o consumidor consegue pagar na origem. A contratação é formalizada por contrato.
-    Resultados dependem de conformidade e trâmites administrativos dos órgãos e entidades envolvidas.
-  </div>
-</footer>
-
-<!-- TOAST -->
-<div class="toast" id="toast">
-  <div class="toast-inner">
-    <div class="toast-badge">OK</div>
-    <div style="flex:1">
-      <p class="toast-title" id="toastTitle">Pronto.</p>
-      <p class="toast-text" id="toastText">Abrindo WhatsApp com mensagem pronta.</p>
-      <div class="toast-actions">
-        <a class="toast-primary" id="toastWhats" href="#" target="_blank" rel="noopener">Ir para WhatsApp</a>
-        <a class="toast-secondary" href="#faq">Rever o FAQ</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-  // ======= CONFIG =======
-  const WHATS_NUMBER_E164 = "5561984301988"; // Bruno: 55 + DDD + número
-
-  function getParam(name){
-    const u = new URL(window.location.href);
-    return u.searchParams.get(name) || "";
-  }
-
-  function buildWhatsText(){
-    const utm = {
-      source: getParam("utm_source"),
-      medium: getParam("utm_medium"),
-      campaign: getParam("utm_campaign"),
-      content: getParam("utm_content"),
-      term: getParam("utm_term")
+  <!-- CONFIG -->
+  <script>
+    // Ajuste aqui sem mexer no resto do layout
+    window.SC_CONFIG = {
+      brandName: "S&C",
+      brandTagline: "Consultoria Técnica Financeira",
+      whatsappNumberE164: "5561984301988", // +55 61 98430-1988
+      whatsappMessage: "Olá! Vim pelo site da S&C. Quero um diagnóstico do meu CPF/CNPJ e entender os próximos passos.",
+      offerLabel: "Atendimento direto no WhatsApp",
+      proofStats: [
+        { t: "Foco", v: "Clareza" },
+        { t: "Modelo", v: "Processo" },
+        { t: "Canal", v: "WhatsApp" },
+        { t: "Entrega", v: "Documentada" }
+      ]
     };
+  </script>
 
-    const lines = [
-      "Olá, Bruno! Quero avançar no REMOV-C™ (Ano Novo 2026).",
-      "",
-      "Meu contexto rápido:",
-      "- Tenho CPF e/ou CNPJ com restrições e preciso destravar crédito/limite/financiamento.",
-      "- Quero entender o caminho correto (origem x 'atalhos' x protocolo técnico) e como contratar.",
-      "",
-      "UTMs (se houver):",
-      `- source: ${utm.source}`,
-      `- medium: ${utm.medium}`,
-      `- campaign: ${utm.campaign}`,
-      `- content: ${utm.content}`,
-      `- term: ${utm.term}`
-    ];
-    return lines.join("\n");
-  }
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="wrap">
+      <div class="inner">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <div id="brandName">S&C</div>
+            <small id="brandTagline">Consultoria Técnica Financeira</small>
+          </div>
+        </div>
 
-  function buildWhatsUrl(){
-    const text = encodeURIComponent(buildWhatsText());
-    return `https://wa.me/${WHATS_NUMBER_E164}?text=${text}`;
-  }
+        <nav class="nav" aria-label="Navegação">
+          <a href="#beneficios">Benefícios</a>
+          <a href="#como-funciona">Como funciona</a>
+          <a href="#provas">Provas</a>
+          <a href="#faq">FAQ</a>
+        </nav>
 
-  function showToast(title, text, whatsUrl){
-    const toast = document.getElementById("toast");
-    document.getElementById("toastTitle").textContent = title;
-    document.getElementById("toastText").textContent = text;
-    const w = document.getElementById("toastWhats");
-    w.href = whatsUrl;
-    toast.style.display = "block";
-    clearTimeout(window.__toastTimer);
-    window.__toastTimer = setTimeout(() => { toast.style.display = "none"; }, 12000);
-  }
+        <a class="btn primary js-wa" href="#contato">Falar agora</a>
+      </div>
+    </div>
+  </div>
 
-  function goWhats(){
-    const wurl = buildWhatsUrl();
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="kicker"><span class="k-dot"></span> <span id="offerLabel">Atendimento direto no WhatsApp</span></div>
 
-    // Track lead (pixel)
-    try { fbq && fbq("track", "Lead"); } catch(e){}
+          <h1 class="h-title">
+            Regularize seu CPF/CNPJ com um processo técnico, claro e documentado.
+          </h1>
 
-    showToast("Tudo certo.", "Abrindo WhatsApp com mensagem pronta.", wurl);
-    window.open(wurl, "_blank");
-  }
+          <p class="lead">
+            A S&C atua com consultoria técnica financeira e intermediação operacional para
+            <b>atualização cadastral</b>, <b>organização de pendências</b> e <b>remoção de apontamentos</b>,
+            sempre com comunicação objetiva e passos definidos.
+          </p>
 
-  // Bind all CTAs (buttons) -> WhatsApp
-  const ids = ["ctaTop","ctaHero","ctaIdeal","ctaComo","ctaBeneficios","ctaBottom"];
-  ids.forEach(id => {
-    const el = document.getElementById(id);
-    if(!el) return;
-    el.addEventListener("click", (e) => {
-      e.preventDefault();
-      goWhats();
-    });
-  });
-</script>
+          <div class="hero-ctas">
+            <a class="btn primary js-wa" href="#contato">Quero diagnóstico no WhatsApp</a>
+            <a class="btn ghost" href="#como-funciona">Ver como funciona</a>
+          </div>
 
+          <div class="trust">
+            <span><b>Sem enrolação:</b> triagem + plano de ação</span>
+            <span><b>Canal único:</b> WhatsApp</span>
+            <span><b>Transparência:</b> passos e registros</span>
+          </div>
+        </div>
+
+        <aside class="panel" aria-label="Resumo do serviço">
+          <div class="head">
+            <strong>O que você recebe</strong>
+            <span class="badge">Padrão premium</span>
+          </div>
+
+          <div class="body">
+            <div class="mini-grid" id="proofGrid">
+              <!-- preenchido via JS -->
+            </div>
+
+            <div class="divider"></div>
+
+            <ul class="bullets">
+              <li><span class="check">✓</span> Diagnóstico objetivo do cenário (CPF e/ou CNPJ)</li>
+              <li><span class="check">✓</span> Organização de pendências e atualização de dados</li>
+              <li><span class="check">✓</span> Encaminhamentos e execução com rastreabilidade</li>
+              <li><span class="check">✓</span> Orientação do “próximo passo” para manter o resultado</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <!-- BENEFÍCIOS -->
+  <section id="beneficios">
+    <div class="wrap">
+      <div class="section-title">
+        <div>
+          <h2>Benefícios que fazem diferença na prática</h2>
+          <p>
+            O foco aqui é reduzir atrito e aumentar previsibilidade:
+            você entende o cenário, enxerga o caminho e acompanha a execução.
+          </p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="pill">Clareza</div>
+          <h3>Você sabe exatamente o que está acontecendo</h3>
+          <p>Sem promessa vaga. Você recebe diagnóstico, passos e comunicação direta para decidir com segurança.</p>
+        </div>
+
+        <div class="card">
+          <div class="pill">Processo</div>
+          <h3>Execução organizada e documentada</h3>
+          <p>Registro dos encaminhamentos, prazos e marcos do processo para evitar perda de informação e ruído.</p>
+        </div>
+
+        <div class="card">
+          <div class="pill">Eficiência</div>
+          <h3>Atendimento rápido pelo canal certo</h3>
+          <p>WhatsApp como canal único para triagem, envio de orientações e acompanhamento, sem idas e vindas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DORES VS POSSIBILIDADES -->
+  <section>
+    <div class="wrap">
+      <div class="section-title">
+        <div>
+          <h2>Quando o CPF/CNPJ trava, a vida trava junto</h2>
+          <p>Esta seção traduz as dores e aponta as possibilidades de forma honesta e objetiva.</p>
+        </div>
+      </div>
+
+      <div class="split">
+        <div class="box">
+          <h3>Dores comuns com pendências e restrições</h3>
+          <ul class="list">
+            <li>Crédito negado ou limite reduzido mesmo com renda/fluxo saudável</li>
+            <li>Dificuldade para financiar, parcelar, negociar ou aprovar cadastros</li>
+            <li>Condições piores: taxas mais altas, exigências maiores, mais burocracia</li>
+            <li>Barreiras em operações do dia a dia (PJ: fornecedores, bancos, parceiros)</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>Possibilidades com cenário organizado</h3>
+          <ul class="list">
+            <li>Maior previsibilidade para aprovações e negociações</li>
+            <li>Cadastro consistente e atualizado reduzindo “risco técnico”</li>
+            <li>Reabertura de caminhos de crédito e oportunidades</li>
+            <li>Plano de manutenção: evitar voltar ao mesmo problema</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section id="como-funciona">
+    <div class="wrap">
+      <div class="section-title">
+        <div>
+          <h2>Como funciona (passo a passo)</h2>
+          <p>Um fluxo simples que reduz ansiedade e evita retrabalho.</p>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <h3>Triagem e diagnóstico</h3>
+            <p>Você descreve seu caso, e a S&C identifica o cenário e o caminho viável com clareza.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <h3>Checklist e documentação</h3>
+            <p>Você recebe a lista do necessário (somente o essencial), com orientações para envio seguro e organizado.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">3</div>
+          <div>
+            <h3>Encaminhamentos e execução</h3>
+            <p>Intermediação operacional e ações técnicas conforme o caso, com atualização de andamento.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">4</div>
+          <div>
+            <h3>Entrega e manutenção</h3>
+            <p>Resultado + recomendações práticas para manter o cenário organizado e evitar recaídas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:16px;" class="cta">
+        <div>
+          <h3>Quer começar com um diagnóstico agora?</h3>
+          <p>Você fala direto com a S&C no WhatsApp. Sem formulário, sem ruído, com orientação clara desde o início.</p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary js-wa" href="#contato">Falar no WhatsApp</a>
+          <a class="btn" href="#faq">Ver FAQ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVAS -->
+  <section id="provas">
+    <div class="wrap">
+      <div class="section-title">
+        <div>
+          <h2>Provas e confiança</h2>
+          <p>
+            Substitua estes textos por depoimentos reais ou casos anonimizados.
+            Se quiser, eu também preparo uma seção de “números” e “prints” com dados sensíveis mascarados.
+          </p>
+        </div>
+      </div>
+
+      <div class="quotes">
+        <div class="quote">
+          <p>“O atendimento foi direto e o processo ficou claro. Eu sabia o que estava sendo feito e por quê.”</p>
+          <div class="who">Cliente PF • Brasília/DF</div>
+        </div>
+        <div class="quote">
+          <p>“Sem enrolação: diagnóstico, plano e execução. A comunicação pelo WhatsApp foi objetiva.”</p>
+          <div class="who">Empreendedor PJ • DF</div>
+        </div>
+        <div class="quote">
+          <p>“O que mais me ajudou foi a organização. Parei de ‘atirar para todo lado’ e segui um passo a passo.”</p>
+          <div class="who">Cliente • Regularização</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-title">
+        <div>
+          <h2>Perguntas frequentes</h2>
+          <p>FAQ bom remove objeções antes do contato e evita repetição no atendimento.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Isso é serviço jurídico?</summary>
+          <p>
+            Não. A S&C atua como <b>consultoria técnica financeira</b> e intermediação operacional.
+            Quando há necessidade de suporte jurídico, isso é tratado de forma separada e transparente (sem confundir funções).
+          </p>
+        </details>
+
+        <details>
+          <summary>Em quanto tempo eu vejo resultado?</summary>
+          <p>
+            Depende do cenário e das bases envolvidas. No diagnóstico inicial, você recebe uma estimativa realista e os fatores que podem influenciar o prazo.
+          </p>
+        </details>
+
+        <details>
+          <summary>O que eu preciso enviar para análise?</summary>
+          <p>
+            Apenas o essencial para o diagnóstico. Depois da triagem, a S&C te entrega um checklist objetivo para evitar excesso de documentos e retrabalho.
+          </p>
+        </details>
+
+        <details>
+          <summary>O atendimento é por onde?</summary>
+          <p>
+            O atendimento é direto pelo WhatsApp, com comunicação objetiva e registro do andamento para você ter visibilidade do processo.
+          </p>
+        </details>
+
+        <details>
+          <summary>Vocês prometem “milagre” ou resultado garantido?</summary>
+          <p>
+            Não. O compromisso é com um processo técnico, claro e documentado, com orientação honesta sobre o que é viável em cada caso.
+          </p>
+        </details>
+
+        <details>
+          <summary>Serve para CPF e para CNPJ?</summary>
+          <p>
+            Sim. A triagem identifica se o caso é PF, PJ ou ambos, e define o plano de ação adequado.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO / CTA FINAL -->
+  <section id="contato">
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <h3>Fale agora com a S&C no WhatsApp</h3>
+          <p>
+            Clique no botão e envie a primeira mensagem. Você já começa com triagem e orientação objetiva.
+          </p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary js-wa" href="#">Abrir WhatsApp</a>
+          <a class="btn" href="#como-funciona">Rever passos</a>
+        </div>
+      </div>
+
+      <footer>
+        <div class="cols wrap">
+          <div>© <span id="y"></span> <span id="footBrand">S&C</span>. Todos os direitos reservados.</div>
+          <div>
+            <span style="color: rgba(255,255,255,.55);">
+              Consultoria técnica financeira. Comunicação clara, processo e rastreabilidade.
+            </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <script>
+    // ====== Helpers ======
+    function buildWhatsAppLink(){
+      const cfg = window.SC_CONFIG || {};
+      const num = (cfg.whatsappNumberE164 || "").replace(/\D/g,"");
+      const msg = encodeURIComponent(cfg.whatsappMessage || "Olá! Quero um diagnóstico do meu CPF/CNPJ.");
+      return `https://wa.me/${num}?text=${msg}`;
+    }
+
+    // ====== Fill brand text ======
+    (function init(){
+      const cfg = window.SC_CONFIG || {};
+      document.getElementById("brandName").textContent = cfg.brandName || "S&C";
+      document.getElementById("brandTagline").textContent = cfg.brandTagline || "Consultoria Técnica Financeira";
+      document.getElementById("offerLabel").textContent = cfg.offerLabel || "Atendimento direto no WhatsApp";
+      document.getElementById("footBrand").textContent = cfg.brandName || "S&C";
+      document.getElementById("y").textContent = new Date().getFullYear();
+
+      // Proof grid
+      const grid = document.getElementById("proofGrid");
+      const stats = Array.isArray(cfg.proofStats) ? cfg.proofStats : [];
+      grid.innerHTML = "";
+      const fallback = [
+        { t:"Foco", v:"Clareza" },
+        { t:"Modelo", v:"Processo" },
+        { t:"Canal", v:"WhatsApp" },
+        { t:"Entrega", v:"Documentada" },
+      ];
+      (stats.length ? stats : fallback).forEach(item => {
+        const div = document.createElement("div");
+        div.className = "mini";
+        div.innerHTML = `<div class="t">${item.t}</div><div class="v">${item.v}</div>`;
+        grid.appendChild(div);
+      });
+
+      // WhatsApp links
+      const wa = buildWhatsAppLink();
+      document.querySelectorAll(".js-wa").forEach(a => {
+        a.setAttribute("href", wa);
+        a.setAttribute("target", "_blank");
+        a.setAttribute("rel", "noopener");
+      });
+
+      // FAQ UX: abre 1 por vez
+      const faqs = document.querySelectorAll("details");
+      faqs.forEach(d => d.addEventListener("toggle", () => {
+        if (!d.open) return;
+        faqs.forEach(o => { if (o !== d) o.open = false; });
+      }));
+    })();
+  </script>
 </body>
 </html>
