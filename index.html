@@ -2,808 +2,342 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>S&C | Consultoria Técnica Financeira para Regularização de CPF/CNPJ</title>
-  <meta name="description" content="Consultoria técnica financeira para regularização de CPF/CNPJ, remoção de apontamentos e atualização cadastral. Processo documentado, comunicação clara e atendimento direto no WhatsApp." />
-  <meta name="theme-color" content="#070A14" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sena & Caetano — Jornada do Crédito</title>
+  <meta name="description" content="Uma dobra: foto do casal + mensagem central da Jornada do Crédito." />
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet" />
 
   <style>
     :root{
-      --bg0:#070A14;
-      --bg1:#0B1020;
-      --bg2:#070A14;
-
+      --bg0:#070A10;
+      --bg1:#0D1020;
       --card: rgba(255,255,255,.06);
-      --stroke: rgba(255,255,255,.12);
-
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.72);
-      --muted2: rgba(255,255,255,.60);
-
-      --brand:#4da3ff;
-      --brand2:#76d1ff;
-      --ok:#59ffa8;
-
-      --shadow: 0 18px 55px rgba(0,0,0,.45);
-      --radius: 18px;
-
-      --max: 1120px;
+      --stroke: rgba(255,255,255,.14);
+      --text:#F3F5FF;
+      --muted: rgba(243,245,255,.78);
+      --accent:#E3B869;
+      --accent2:#B48DFF;
+      --ok:#A0FFC6;
+      --shadow: 0 18px 44px rgba(0,0,0,.42);
+      --radius: 22px;
     }
 
     *{ box-sizing:border-box; }
-    html, body { height:100%; }
+    html,body{ height:100%; }
     body{
       margin:0;
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(1100px 650px at 15% 0%, rgba(77,163,255,.25), transparent 60%),
-        radial-gradient(900px 600px at 90% 10%, rgba(118,209,255,.18), transparent 55%),
-        linear-gradient(180deg, var(--bg0) 0%, var(--bg1) 45%, var(--bg2) 100%);
+        radial-gradient(1200px 700px at 12% 18%, rgba(180,141,255,.22), transparent 55%),
+        radial-gradient(900px 600px at 88% 28%, rgba(227,184,105,.22), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow:hidden; /* força "praticamente sem scroll" */
     }
 
-    a{ color:inherit; text-decoration:none; }
-    .wrap{ max-width: var(--max); margin:0 auto; padding:0 18px; }
-
-    /* Topbar */
-    .topbar{
-      position: sticky; top:0; z-index:20;
-      backdrop-filter: blur(10px);
-      background: rgba(7,10,20,.55);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-    .topbar .inner{
-      display:flex; align-items:center; justify-content:space-between;
-      padding: 12px 0;
-      gap: 12px;
+    .wrap{
+      min-height:100vh;
+      padding: clamp(14px, 2.2vw, 22px);
+      display:flex;
+      align-items:stretch;
+      justify-content:center;
     }
 
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight: 800;
-      letter-spacing: .2px;
-      min-width: 180px;
-    }
-    .logo{
-      width:34px; height:34px; border-radius:10px;
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-      box-shadow: 0 8px 22px rgba(77,163,255,.25);
-    }
-    .brand small{
-      display:block;
-      font-weight: 600;
-      color: var(--muted2);
-      letter-spacing: 0;
-      margin-top: 2px;
-      font-size: 12px;
-    }
-
-    .nav{
-      display:flex; align-items:center; gap:18px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-    .nav a{ opacity:.9; }
-    .nav a:hover{ opacity:1; color:#fff; }
-
-    /* Buttons */
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding: 12px 16px;
-      border-radius: 14px;
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.06);
-      color:#fff;
-      font-weight: 700;
-      cursor:pointer;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-      user-select:none;
-      white-space:nowrap;
-    }
-    .btn:hover{
-      transform: translateY(-1px);
-      background: rgba(255,255,255,.08);
-      border-color: rgba(255,255,255,.18);
-    }
-    .btn.primary{
-      border: 1px solid rgba(77,163,255,.45);
-      background: linear-gradient(135deg, rgba(77,163,255,.92), rgba(118,209,255,.82));
-      color:#061024;
-      box-shadow: 0 14px 40px rgba(77,163,255,.25);
-    }
-    .btn.primary:hover{ filter: brightness(1.02); }
-
-    .btn.ghost{
-      background: transparent;
-      border-color: rgba(255,255,255,.14);
-    }
-
-    /* Hero */
-    .hero{ padding: 54px 0 10px; }
-    .hero-grid{
+    .frame{
+      width:min(1180px, 100%);
+      height:calc(100vh - (2 * clamp(14px, 2.2vw, 22px)));
+      border-radius: clamp(18px, 2.5vw, 28px);
+      border: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(135deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+      overflow:hidden;
       display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 22px;
-      align-items: start;
+      grid-template-columns: 1.2fr .8fr;
+    }
+
+    /* left content */
+    .content{
+      padding: clamp(16px, 2.6vw, 28px);
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+      min-width: 0;
     }
 
     .kicker{
-      display:inline-flex; align-items:center; gap:10px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
       padding: 8px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      color: var(--muted);
-      font-size: 13px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      width: fit-content;
+      font-weight: 800;
+      font-size: 0.86rem;
+      letter-spacing: .02em;
+      color: rgba(243,245,255,.92);
     }
-    .k-dot{
-      width:7px; height:7px; border-radius: 999px;
+    .dot{
+      width:10px;height:10px;border-radius:999px;
       background: var(--ok);
-      box-shadow: 0 0 18px rgba(89,255,168,.35);
+      box-shadow: 0 0 0 4px rgba(160,255,198,.16);
+      flex: 0 0 auto;
     }
 
-    .h-title{
-      margin: 14px 0 10px;
+    h1{
       font-family: "Playfair Display", serif;
-      font-size: clamp(30px, 4.2vw, 46px);
-      line-height: 1.07;
-      letter-spacing: -0.5px;
+      margin:0;
+      line-height:1.03;
+      letter-spacing:.02em;
+      font-size: clamp(1.55rem, 2.2vw + 1rem, 3.0rem);
+      text-wrap: balance;
     }
-    .lead{
+    .hl{
+      color: #FFE6F6;
+      text-shadow: 0 10px 24px rgba(0,0,0,.34);
+    }
+
+    .subtitle{
       margin: 0;
       color: var(--muted);
-      font-size: 16px;
-      line-height: 1.55;
+      font-size: clamp(.95rem, .45vw + .78rem, 1.08rem);
+      line-height: 1.35;
       max-width: 62ch;
     }
 
-    .hero-ctas{
-      margin-top: 18px;
-      display:flex; gap: 12px; flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .trust{
-      margin-top: 18px;
-      display:flex; gap: 14px; flex-wrap: wrap;
-      color: var(--muted2);
-      font-size: 13px;
-    }
-    .trust b{ color:#fff; font-weight: 800; }
-
-    /* Side panel */
-    .panel{
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
+    .block{
+      margin-top: 6px;
       border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      border: 1px solid var(--stroke);
+      background: var(--card);
+      padding: 14px 14px;
       overflow:hidden;
     }
-    .panel .head{
-      padding: 16px 16px 12px;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      display:flex; justify-content:space-between; align-items:center;
+
+    .block-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
       gap: 10px;
-    }
-    .panel .head strong{ font-size: 14px; }
-    .badge{
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(77,163,255,.12);
-      border: 1px solid rgba(77,163,255,.25);
-      color: rgba(255,255,255,.86);
-      font-size: 12px;
-      white-space: nowrap;
-    }
-    .panel .body{ padding: 14px 16px 16px; }
-
-    .mini-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:10px;
-    }
-    .mini{
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      border-radius: 14px;
-      padding: 12px;
-    }
-    .mini .t{ font-size: 12px; color: var(--muted2); }
-    .mini .v{ margin-top: 6px; font-weight: 800; font-size: 16px; }
-
-    .divider{ height: 1px; background: rgba(255,255,255,.10); margin: 14px 0; }
-
-    .bullets{ margin:0; padding:0; list-style:none; display:grid; gap:10px; }
-    .bullets li{
-      display:flex; gap:10px; align-items:flex-start;
-      color: var(--muted);
-      line-height: 1.35;
-      font-size: 14px;
-    }
-    .check{
-      width:18px; height:18px; border-radius: 6px;
-      background: rgba(89,255,168,.14);
-      border: 1px solid rgba(89,255,168,.25);
-      display:inline-flex; align-items:center; justify-content:center;
-      flex: 0 0 18px;
-      margin-top: 1px;
+      margin-bottom: 10px;
       font-weight: 900;
-      font-size: 12px;
-      color: rgba(255,255,255,.9);
-    }
-
-    /* Section */
-    section{ padding: 46px 0; }
-    .section-title{
-      display:flex; justify-content:space-between; align-items:flex-end;
-      gap:18px; margin-bottom: 18px;
-    }
-    .section-title h2{
-      margin:0;
-      font-family: "Playfair Display", serif;
-      font-size: clamp(22px, 3vw, 30px);
-      letter-spacing: -0.3px;
-    }
-    .section-title p{
-      margin:0;
-      color: var(--muted);
-      max-width: 68ch;
-      line-height: 1.5;
-      font-size: 14px;
-    }
-
-    .cards{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-    }
-    .card{
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      border-radius: var(--radius);
-      padding: 16px;
-      box-shadow: 0 10px 28px rgba(0,0,0,.25);
-      min-height: 150px;
+      letter-spacing: .08em;
+      font-size: .78rem;
+      text-transform: uppercase;
+      color: rgba(243,245,255,.92);
     }
     .pill{
-      display:inline-flex; align-items:center; gap:8px;
+      font-weight: 900;
       padding: 6px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      color: var(--muted2);
-      font-size: 12px;
-      margin-bottom: 10px;
+      background: linear-gradient(135deg, rgba(227,184,105,.18), rgba(180,141,255,.18));
+      border: 1px solid rgba(255,255,255,.16);
+      color: rgba(243,245,255,.92);
+      letter-spacing: .03em;
+      font-size: .74rem;
+      white-space: nowrap;
     }
-    .card h3{ margin: 0 0 8px; font-size: 16px; }
-    .card p{ margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
 
-    /* Split section */
-    .split{
+    ul{
+      margin:0;
+      padding-left: 18px;
       display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-      align-items: stretch;
+      gap: 6px;
+      color: rgba(243,245,255,.90);
+      font-weight: 600;
+      font-size: clamp(.90rem, .35vw + .74rem, 1.02rem);
+      line-height: 1.18;
     }
-    .box{
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
+    li{ margin:0; }
+    li strong{ color: var(--accent); }
+
+    .warning{
+      margin-top: 10px;
       border-radius: var(--radius);
-      padding: 16px;
-      box-shadow: 0 10px 28px rgba(0,0,0,.25);
-    }
-    .box h3{ margin: 0 0 10px; font-size: 16px; }
-    .list{
-      margin:0; padding-left: 18px;
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 14px;
-    }
-
-    /* Steps */
-    .steps{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-    .step{
-      display:flex; gap:12px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      border-radius: var(--radius);
-      padding: 16px;
-    }
-    .num{
-      width:34px; height:34px; border-radius: 12px;
-      background: rgba(77,163,255,.14);
-      border: 1px solid rgba(77,163,255,.25);
-      display:flex; align-items:center; justify-content:center;
-      font-weight: 900;
-      flex: 0 0 34px;
-      color: rgba(255,255,255,.92);
-    }
-    .step h3{ margin:0 0 6px; font-size: 16px; }
-    .step p{ margin:0; color: var(--muted); font-size: 14px; line-height: 1.55; }
-
-    /* Proof */
-    .quotes{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-    .quote{
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      border-radius: var(--radius);
-      padding: 16px;
-    }
-    .quote p{ margin: 0 0 10px; color: rgba(255,255,255,.86); line-height: 1.55; font-size: 14px; }
-    .quote .who{ color: var(--muted2); font-size: 13px; }
-
-    /* FAQ */
-    .faq{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    details{
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      border-radius: 16px;
+      border: 1px solid rgba(227,184,105,.28);
+      background: linear-gradient(135deg, rgba(227,184,105,.16), rgba(255,255,255,.03));
       padding: 12px 14px;
+      color: rgba(243,245,255,.95);
+      font-weight: 900;
+      font-size: clamp(.92rem, .35vw + .75rem, 1.02rem);
+      line-height: 1.25;
     }
-    summary{
-      cursor:pointer;
-      font-weight: 800;
-      color: rgba(255,255,255,.92);
-      list-style:none;
-    }
-    summary::-webkit-details-marker{ display:none; }
-    details p{
-      margin: 10px 0 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.6;
+    .warning span{
+      color: #3c2c15;
+      background: linear-gradient(135deg, #fff5d7, var(--accent));
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-weight: 900;
+      margin-right: 8px;
+      display:inline-block;
     }
 
-    /* CTA band */
-    .cta{
-      border: 1px solid rgba(77,163,255,.22);
-      background: linear-gradient(135deg, rgba(77,163,255,.14), rgba(118,209,255,.10));
-      border-radius: 22px;
-      padding: 18px;
+    .result{
+      margin-top: auto;
+      border-radius: var(--radius);
+      border: 1px solid rgba(180,141,255,.28);
+      background:
+        radial-gradient(500px 220px at 18% 10%, rgba(180,141,255,.20), transparent 55%),
+        linear-gradient(135deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      padding: 14px 14px;
+    }
+    .result .label{
+      font-weight: 900;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      font-size: .78rem;
+      color: rgba(243,245,255,.88);
+      margin-bottom: 6px;
+      display:flex; gap: 8px; align-items:center;
+    }
+    .bar{
+      width:10px; height:10px; border-radius: 3px;
+      background: var(--accent2);
+      box-shadow: 0 0 0 4px rgba(180,141,255,.14);
+      flex: 0 0 auto;
+    }
+    .result .big{
+      margin:0;
+      font-weight: 900;
+      font-size: clamp(1.05rem, .75vw + .85rem, 1.45rem);
+      line-height: 1.12;
+      color: rgba(243,245,255,.98);
+    }
+    .result .big em{
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    /* right image */
+    .media{
+      position: relative;
+      border-left: 1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(600px 420px at 50% 10%, rgba(255,255,255,.10), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
       display:flex;
-      justify-content: space-between;
-      gap: 14px;
-      align-items: center;
-      box-shadow: 0 16px 44px rgba(77,163,255,.16);
-    }
-    .cta h3{ margin:0 0 6px; font-size: 18px; }
-    .cta p{ margin:0; color: var(--muted); font-size: 14px; line-height: 1.5; max-width: 78ch; }
-
-    /* Footer */
-    footer{
-      padding: 26px 0 40px;
-      color: rgba(255,255,255,.55);
-      font-size: 13px;
-    }
-    footer .cols{
-      display:flex; gap: 14px; flex-wrap: wrap;
-      justify-content: space-between;
-      border-top: 1px solid rgba(255,255,255,.08);
-      padding-top: 18px;
+      align-items:stretch;
+      justify-content:center;
+      overflow:hidden;
     }
 
-    /* Responsive */
-    @media (max-width: 980px){
-      .hero-grid{ grid-template-columns: 1fr; }
-      .cards{ grid-template-columns: 1fr; }
-      .split{ grid-template-columns: 1fr; }
-      .quotes{ grid-template-columns: 1fr; }
-      .steps{ grid-template-columns: 1fr; }
-      .faq{ grid-template-columns: 1fr; }
-      .nav{ display:none; }
-      .cta{ flex-direction: column; align-items: flex-start; }
-      .brand{ min-width: unset; }
+    .photo{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(1.05) saturate(1.02);
+      transform: scale(1.02);
+    }
+
+    .badge{
+      position:absolute;
+      left: 14px;
+      bottom: 14px;
+      right: 14px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.38);
+      backdrop-filter: blur(10px);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      font-weight: 800;
+      color: rgba(243,245,255,.94);
+      font-size: .86rem;
+    }
+    .badge small{
+      font-weight: 700;
+      color: rgba(243,245,255,.78);
+    }
+
+    /* Responsive: stack */
+    @media (max-width: 940px){
+      body{ overflow:auto; } /* em mobile pode precisar de pouco scroll */
+      .frame{
+        height:auto;
+        min-height: calc(100vh - (2 * clamp(14px, 2.2vw, 22px)));
+        grid-template-columns: 1fr;
+      }
+      .media{
+        min-height: 44vh;
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,.10);
+      }
+      .content{ padding-bottom: 18px; }
+      .result{ margin-top: 12px; }
     }
   </style>
 </head>
 
 <body>
-  <!-- CONFIG -->
-  <script>
-    // Ajuste aqui sem mexer no resto do layout
-    window.SC_CONFIG = {
-      brandName: "S&C",
-      brandTagline: "Consultoria Técnica Financeira",
-      whatsappNumberE164: "5561984301988", // +55 61 98430-1988
-      whatsappMessage: "Olá! Vim pelo site da S&C. Quero um diagnóstico do meu CPF/CNPJ e entender os próximos passos.",
-      offerLabel: "Atendimento direto no WhatsApp",
-      proofStats: [
-        { t: "Foco", v: "Clareza" },
-        { t: "Modelo", v: "Processo" },
-        { t: "Canal", v: "WhatsApp" },
-        { t: "Entrega", v: "Documentada" }
-      ]
-    };
-  </script>
+  <main class="wrap">
+    <section class="frame" role="region" aria-label="Sena & Caetano — Uma dobra">
 
-  <!-- TOPBAR -->
-  <div class="topbar">
-    <div class="wrap">
-      <div class="inner">
-        <div class="brand">
-          <div class="logo" aria-hidden="true"></div>
-          <div>
-            <div id="brandName">S&C</div>
-            <small id="brandTagline">Consultoria Técnica Financeira</small>
-          </div>
+      <div class="content">
+        <div class="kicker">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Sena &amp; Caetano • Jornada do Crédito</span>
         </div>
 
-        <nav class="nav" aria-label="Navegação">
-          <a href="#beneficios">Benefícios</a>
-          <a href="#como-funciona">Como funciona</a>
-          <a href="#provas">Provas</a>
-          <a href="#faq">FAQ</a>
-        </nav>
+        <h1>
+          TE CONDUZIMOS A SAIR DO <span class="hl">"NAMORO COM O CRÉDITO"</span>
+          E TE LEVAMOS PARA O <span class="hl">"CASAMENTO"</span> COM ELE!
+        </h1>
 
-        <a class="btn primary js-wa" href="#contato">Falar agora</a>
-      </div>
-    </div>
-  </div>
+        <p class="subtitle">
+          ESTAREMOS NA PRIMEIRA FILA CELEBRANDO JUNTOS ESSA UNIÃO
+        </p>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="wrap">
-      <div class="hero-grid">
-        <div>
-          <div class="kicker"><span class="k-dot"></span> <span id="offerLabel">Atendimento direto no WhatsApp</span></div>
-
-          <h1 class="h-title">
-            Regularize seu CPF/CNPJ com um processo técnico, claro e documentado.
-          </h1>
-
-          <p class="lead">
-            A S&C atua com consultoria técnica financeira e intermediação operacional para
-            <b>atualização cadastral</b>, <b>organização de pendências</b> e <b>remoção de apontamentos</b>,
-            sempre com comunicação objetiva e passos definidos.
-          </p>
-
-          <div class="hero-ctas">
-            <a class="btn primary js-wa" href="#contato">Quero diagnóstico no WhatsApp</a>
-            <a class="btn ghost" href="#como-funciona">Ver como funciona</a>
+        <div class="block">
+          <div class="block-title">
+            <span>JORNADA DO CRÉDITO:</span>
+            <span class="pill">do travado ao liberado</span>
           </div>
 
-          <div class="trust">
-            <span><b>Sem enrolação:</b> triagem + plano de ação</span>
-            <span><b>Canal único:</b> WhatsApp</span>
-            <span><b>Transparência:</b> passos e registros</span>
-          </div>
-        </div>
-
-        <aside class="panel" aria-label="Resumo do serviço">
-          <div class="head">
-            <strong>O que você recebe</strong>
-            <span class="badge">Padrão premium</span>
-          </div>
-
-          <div class="body">
-            <div class="mini-grid" id="proofGrid">
-              <!-- preenchido via JS -->
-            </div>
-
-            <div class="divider"></div>
-
-            <ul class="bullets">
-              <li><span class="check">✓</span> Diagnóstico objetivo do cenário (CPF e/ou CNPJ)</li>
-              <li><span class="check">✓</span> Organização de pendências e atualização de dados</li>
-              <li><span class="check">✓</span> Encaminhamentos e execução com rastreabilidade</li>
-              <li><span class="check">✓</span> Orientação do “próximo passo” para manter o resultado</li>
-            </ul>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </header>
-
-  <!-- BENEFÍCIOS -->
-  <section id="beneficios">
-    <div class="wrap">
-      <div class="section-title">
-        <div>
-          <h2>Benefícios que fazem diferença na prática</h2>
-          <p>
-            O foco aqui é reduzir atrito e aumentar previsibilidade:
-            você entende o cenário, enxerga o caminho e acompanha a execução.
-          </p>
-        </div>
-      </div>
-
-      <div class="cards">
-        <div class="card">
-          <div class="pill">Clareza</div>
-          <h3>Você sabe exatamente o que está acontecendo</h3>
-          <p>Sem promessa vaga. Você recebe diagnóstico, passos e comunicação direta para decidir com segurança.</p>
-        </div>
-
-        <div class="card">
-          <div class="pill">Processo</div>
-          <h3>Execução organizada e documentada</h3>
-          <p>Registro dos encaminhamentos, prazos e marcos do processo para evitar perda de informação e ruído.</p>
-        </div>
-
-        <div class="card">
-          <div class="pill">Eficiência</div>
-          <h3>Atendimento rápido pelo canal certo</h3>
-          <p>WhatsApp como canal único para triagem, envio de orientações e acompanhamento, sem idas e vindas.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DORES VS POSSIBILIDADES -->
-  <section>
-    <div class="wrap">
-      <div class="section-title">
-        <div>
-          <h2>Quando o CPF/CNPJ trava, a vida trava junto</h2>
-          <p>Esta seção traduz as dores e aponta as possibilidades de forma honesta e objetiva.</p>
-        </div>
-      </div>
-
-      <div class="split">
-        <div class="box">
-          <h3>Dores comuns com pendências e restrições</h3>
-          <ul class="list">
-            <li>Crédito negado ou limite reduzido mesmo com renda/fluxo saudável</li>
-            <li>Dificuldade para financiar, parcelar, negociar ou aprovar cadastros</li>
-            <li>Condições piores: taxas mais altas, exigências maiores, mais burocracia</li>
-            <li>Barreiras em operações do dia a dia (PJ: fornecedores, bancos, parceiros)</li>
+          <ul>
+            <li>CONSULTORIA FINANCEIRA</li>
+            <li>DIAGNÓSTICO ASSERTIVO SOBRE O QUE ESTÁ TRAVANDO O CRÉDITO</li>
+            <li>ESTRATÉGIA PERSONALIZADA</li>
+            <li>NETWORKING ESTRATÉGICO</li>
+            <li><strong>NOME LIMPO</strong> NO SERASA SPC BOA VISTA CENPROT QUOD</li>
+            <li><strong>SCORE</strong> RESTAURADO</li>
+            <li><strong>RATING COMERCIAL</strong> CONCENTRE</li>
+            <li><strong>CAMINHO LIVRE</strong> PARA AS POSSIBILIDADES</li>
           </ul>
         </div>
 
-        <div class="box">
-          <h3>Possibilidades com cenário organizado</h3>
-          <ul class="list">
-            <li>Maior previsibilidade para aprovações e negociações</li>
-            <li>Cadastro consistente e atualizado reduzindo “risco técnico”</li>
-            <li>Reabertura de caminhos de crédito e oportunidades</li>
-            <li>Plano de manutenção: evitar voltar ao mesmo problema</li>
-          </ul>
+        <div class="warning">
+          <span>ALERTA</span>
+          PARE DE PROCURAR SOLUÇÕES BARATAS QUE SÓ TE ILUDEM E NÃO RESOLVE!
+          NÃO É SÓ LIMPAR O NOME! É CHEGAR NO RESULTADO!
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- COMO FUNCIONA -->
-  <section id="como-funciona">
-    <div class="wrap">
-      <div class="section-title">
-        <div>
-          <h2>Como funciona (passo a passo)</h2>
-          <p>Um fluxo simples que reduz ansiedade e evita retrabalho.</p>
+        <div class="result">
+          <div class="label"><span class="bar" aria-hidden="true"></span>RESULTADO</div>
+          <p class="big">RESULTADO = <em>POSSIBILIDADES REAIS DE CRÉDITO</em></p>
         </div>
       </div>
 
-      <div class="steps">
-        <div class="step">
-          <div class="num">1</div>
+      <aside class="media" aria-label="Foto Sena & Caetano">
+        <!-- Troque o src se você usar outro caminho/arquivo -->
+        <img class="photo" src="./assets/img/hero-casal.jpg" alt="Sena & Caetano (foto do casal)" />
+        <div class="badge">
           <div>
-            <h3>Triagem e diagnóstico</h3>
-            <p>Você descreve seu caso, e a S&C identifica o cenário e o caminho viável com clareza.</p>
+            Sena &amp; Caetano
+            <small>Consultoria Técnica Financeira</small>
           </div>
+          <div style="color: rgba(227,184,105,.95); font-weight: 900;">S&amp;C</div>
         </div>
+      </aside>
 
-        <div class="step">
-          <div class="num">2</div>
-          <div>
-            <h3>Checklist e documentação</h3>
-            <p>Você recebe a lista do necessário (somente o essencial), com orientações para envio seguro e organizado.</p>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="num">3</div>
-          <div>
-            <h3>Encaminhamentos e execução</h3>
-            <p>Intermediação operacional e ações técnicas conforme o caso, com atualização de andamento.</p>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="num">4</div>
-          <div>
-            <h3>Entrega e manutenção</h3>
-            <p>Resultado + recomendações práticas para manter o cenário organizado e evitar recaídas.</p>
-          </div>
-        </div>
-      </div>
-
-      <div style="margin-top:16px;" class="cta">
-        <div>
-          <h3>Quer começar com um diagnóstico agora?</h3>
-          <p>Você fala direto com a S&C no WhatsApp. Sem formulário, sem ruído, com orientação clara desde o início.</p>
-        </div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn primary js-wa" href="#contato">Falar no WhatsApp</a>
-          <a class="btn" href="#faq">Ver FAQ</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROVAS -->
-  <section id="provas">
-    <div class="wrap">
-      <div class="section-title">
-        <div>
-          <h2>Provas e confiança</h2>
-          <p>
-            Substitua estes textos por depoimentos reais ou casos anonimizados.
-            Se quiser, eu também preparo uma seção de “números” e “prints” com dados sensíveis mascarados.
-          </p>
-        </div>
-      </div>
-
-      <div class="quotes">
-        <div class="quote">
-          <p>“O atendimento foi direto e o processo ficou claro. Eu sabia o que estava sendo feito e por quê.”</p>
-          <div class="who">Cliente PF • Brasília/DF</div>
-        </div>
-        <div class="quote">
-          <p>“Sem enrolação: diagnóstico, plano e execução. A comunicação pelo WhatsApp foi objetiva.”</p>
-          <div class="who">Empreendedor PJ • DF</div>
-        </div>
-        <div class="quote">
-          <p>“O que mais me ajudou foi a organização. Parei de ‘atirar para todo lado’ e segui um passo a passo.”</p>
-          <div class="who">Cliente • Regularização</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="wrap">
-      <div class="section-title">
-        <div>
-          <h2>Perguntas frequentes</h2>
-          <p>FAQ bom remove objeções antes do contato e evita repetição no atendimento.</p>
-        </div>
-      </div>
-
-      <div class="faq">
-        <details>
-          <summary>Isso é serviço jurídico?</summary>
-          <p>
-            Não. A S&C atua como <b>consultoria técnica financeira</b> e intermediação operacional.
-            Quando há necessidade de suporte jurídico, isso é tratado de forma separada e transparente (sem confundir funções).
-          </p>
-        </details>
-
-        <details>
-          <summary>Em quanto tempo eu vejo resultado?</summary>
-          <p>
-            Depende do cenário e das bases envolvidas. No diagnóstico inicial, você recebe uma estimativa realista e os fatores que podem influenciar o prazo.
-          </p>
-        </details>
-
-        <details>
-          <summary>O que eu preciso enviar para análise?</summary>
-          <p>
-            Apenas o essencial para o diagnóstico. Depois da triagem, a S&C te entrega um checklist objetivo para evitar excesso de documentos e retrabalho.
-          </p>
-        </details>
-
-        <details>
-          <summary>O atendimento é por onde?</summary>
-          <p>
-            O atendimento é direto pelo WhatsApp, com comunicação objetiva e registro do andamento para você ter visibilidade do processo.
-          </p>
-        </details>
-
-        <details>
-          <summary>Vocês prometem “milagre” ou resultado garantido?</summary>
-          <p>
-            Não. O compromisso é com um processo técnico, claro e documentado, com orientação honesta sobre o que é viável em cada caso.
-          </p>
-        </details>
-
-        <details>
-          <summary>Serve para CPF e para CNPJ?</summary>
-          <p>
-            Sim. A triagem identifica se o caso é PF, PJ ou ambos, e define o plano de ação adequado.
-          </p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTATO / CTA FINAL -->
-  <section id="contato">
-    <div class="wrap">
-      <div class="cta">
-        <div>
-          <h3>Fale agora com a S&C no WhatsApp</h3>
-          <p>
-            Clique no botão e envie a primeira mensagem. Você já começa com triagem e orientação objetiva.
-          </p>
-        </div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn primary js-wa" href="#">Abrir WhatsApp</a>
-          <a class="btn" href="#como-funciona">Rever passos</a>
-        </div>
-      </div>
-
-      <footer>
-        <div class="cols wrap">
-          <div>© <span id="y"></span> <span id="footBrand">S&C</span>. Todos os direitos reservados.</div>
-          <div>
-            <span style="color: rgba(255,255,255,.55);">
-              Consultoria técnica financeira. Comunicação clara, processo e rastreabilidade.
-            </span>
-          </div>
-        </div>
-      </footer>
-    </div>
-  </section>
-
-  <script>
-    // ====== Helpers ======
-    function buildWhatsAppLink(){
-      const cfg = window.SC_CONFIG || {};
-      const num = (cfg.whatsappNumberE164 || "").replace(/\D/g,"");
-      const msg = encodeURIComponent(cfg.whatsappMessage || "Olá! Quero um diagnóstico do meu CPF/CNPJ.");
-      return `https://wa.me/${num}?text=${msg}`;
-    }
-
-    // ====== Fill brand text ======
-    (function init(){
-      const cfg = window.SC_CONFIG || {};
-      document.getElementById("brandName").textContent = cfg.brandName || "S&C";
-      document.getElementById("brandTagline").textContent = cfg.brandTagline || "Consultoria Técnica Financeira";
-      document.getElementById("offerLabel").textContent = cfg.offerLabel || "Atendimento direto no WhatsApp";
-      document.getElementById("footBrand").textContent = cfg.brandName || "S&C";
-      document.getElementById("y").textContent = new Date().getFullYear();
-
-      // Proof grid
-      const grid = document.getElementById("proofGrid");
-      const stats = Array.isArray(cfg.proofStats) ? cfg.proofStats : [];
-      grid.innerHTML = "";
-      const fallback = [
-        { t:"Foco", v:"Clareza" },
-        { t:"Modelo", v:"Processo" },
-        { t:"Canal", v:"WhatsApp" },
-        { t:"Entrega", v:"Documentada" },
-      ];
-      (stats.length ? stats : fallback).forEach(item => {
-        const div = document.createElement("div");
-        div.className = "mini";
-        div.innerHTML = `<div class="t">${item.t}</div><div class="v">${item.v}</div>`;
-        grid.appendChild(div);
-      });
-
-      // WhatsApp links
-      const wa = buildWhatsAppLink();
-      document.querySelectorAll(".js-wa").forEach(a => {
-        a.setAttribute("href", wa);
-        a.setAttribute("target", "_blank");
-        a.setAttribute("rel", "noopener");
-      });
-
-      // FAQ UX: abre 1 por vez
-      const faqs = document.querySelectorAll("details");
-      faqs.forEach(d => d.addEventListener("toggle", () => {
-        if (!d.open) return;
-        faqs.forEach(o => { if (o !== d) o.open = false; });
-      }));
-    })();
-  </script>
+    </section>
+  </main>
 </body>
 </html>
