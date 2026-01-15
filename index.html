@@ -45,12 +45,10 @@
       --ink:#0b1220;
       --muted: rgba(11,18,32,.72);
 
-      --card:#ffffff;
       --stroke: rgba(11,18,32,.10);
-      --soft: rgba(11,18,32,.06);
 
-      --accent:#B8872C;   /* dourado mais “sofisticado” no branco */
-      --accent2:#5B63FF;  /* violeta/azul para contraste */
+      --accent:#B8872C;
+      --accent2:#5B63FF;
       --ok:#16a34a;
 
       --shadow: 0 14px 34px rgba(11,18,32,.14);
@@ -69,7 +67,6 @@
       background: var(--page);
     }
 
-    /* One fold */
     .wrap{
       min-height:100vh;
       padding: clamp(14px, 2vw, 18px);
@@ -124,7 +121,6 @@
       flex:0 0 auto;
     }
 
-    /* Slim headline */
     h1{
       font-family: "Playfair Display", serif;
       margin: 0;
@@ -133,9 +129,7 @@
       font-size: clamp(1.45rem, 1.7vw + 1rem, 2.6rem);
       text-wrap: balance;
     }
-    .hl{
-      color: var(--accent2);
-    }
+    .hl{ color: var(--accent2); }
 
     .subtitle{
       margin:0;
@@ -183,7 +177,7 @@
       margin:0;
       padding-left: 16px;
       display:grid;
-      gap: 5px;                 /* mais slim */
+      gap: 5px;
       color: rgba(11,18,32,.86);
       font-weight: 650;
       font-size: clamp(.88rem, .25vw + .78rem, .98rem);
@@ -212,6 +206,56 @@
       font-weight: 900;
       margin-right: 8px;
       display:inline-block;
+    }
+
+    .cta-row{
+      margin-top: 8px;
+      display:flex;
+      justify-content:flex-start;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* WhatsApp buttons */
+    .wa-btn{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(18,140,126,.25);
+      background: linear-gradient(135deg, rgba(37,211,102,.95), rgba(18,140,126,.92));
+      color: #062016;
+      text-decoration: none;
+      font-weight: 900;
+      box-shadow: 0 12px 22px rgba(11,18,32,.12);
+      transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+      user-select: none;
+      white-space: nowrap;
+      animation: waPulse 3s ease-in-out infinite;
+    }
+    .wa-btn:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 16px 28px rgba(11,18,32,.16);
+      filter: saturate(1.05);
+    }
+    .wa-ico{ width: 18px; height: 18px; flex:0 0 auto; display:block; }
+    .wa-text{ line-height: 1.05; font-size: .92rem; }
+    .wa-sub{
+      display:block;
+      font-size: .74rem;
+      font-weight: 800;
+      opacity: .88;
+      margin-top: 2px;
+    }
+
+    @keyframes waPulse{
+      0%, 78%, 100% { transform: translateY(0); }
+      82% { transform: translateY(-1px); }
+      86% { transform: translateY(0); }
+      90% { transform: translateY(-1px); }
+      94% { transform: translateY(0); }
+      97% { transform: translateY(-1px); }
     }
 
     .result{
@@ -249,10 +293,7 @@
       line-height: 1.15;
       color: rgba(11,18,32,.94);
     }
-    .result .big em{
-      font-style: normal;
-      color: var(--accent);
-    }
+    .result .big em{ font-style: normal; color: var(--accent); }
 
     /* Right media */
     .media{
@@ -263,10 +304,9 @@
       align-items:center;
       justify-content:center;
       overflow:hidden;
-      padding: 12px; /* evita sobras feias e dá “respiro” */
+      padding: 12px;
     }
 
-    /* no crop + melhor preenchimento */
     .photo{
       width:100%;
       height:100%;
@@ -296,71 +336,30 @@
       color: rgba(11,18,32,.88);
       font-size: .84rem;
     }
-    .badge small{
-      font-weight: 700;
-      color: rgba(11,18,32,.62);
-    }
+    .badge small{ font-weight: 700; color: rgba(11,18,32,.62); }
 
-    /* WhatsApp CTA: agora dentro do fluxo (não sobrepõe) */
-    .cta-row{
-      margin-top: 8px;
-      display:flex;
-      justify-content:flex-start;
-      gap: 10px;
-      flex-wrap: wrap;
+    /* WhatsApp button above the photo (overlay, but in a safe area) */
+    .wa-on-photo{
+      position:absolute;
+      top: 18px;
+      right: 18px;
+      z-index: 20;
+      padding: 9px 11px;        /* um pouco menor na foto */
+      border-radius: 14px;
+      border: 1px solid rgba(18,140,126,.22);
+      background: rgba(255,255,255,.86);
+      color: rgba(11,18,32,.92);
+      box-shadow: 0 10px 20px rgba(11,18,32,.12);
+      animation: waPulse 3s ease-in-out infinite;
     }
-
-    .wa-btn{
-      display:inline-flex;
-      align-items:center;
-      gap: 10px;
-      padding: 10px 12px;     /* menor */
-      border-radius: 14px;    /* mais “slim” */
-      border: 1px solid rgba(18,140,126,.25);
-      background: linear-gradient(135deg, rgba(37,211,102,.95), rgba(18,140,126,.92));
-      color: #062016;
-      text-decoration: none;
-      font-weight: 900;
-      box-shadow: 0 12px 22px rgba(11,18,32,.12);
-      transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
-      user-select: none;
-      white-space: nowrap;
-      animation: waPulse 3s ease-in-out infinite; /* tremular a cada 3s */
-    }
-    .wa-btn:hover{
+    .wa-on-photo:hover{
       transform: translateY(-1px);
-      box-shadow: 0 16px 28px rgba(11,18,32,.16);
+      box-shadow: 0 14px 26px rgba(11,18,32,.16);
       filter: saturate(1.05);
     }
+    .wa-on-photo .wa-sub{ opacity:.78; }
+    .wa-on-photo .wa-ico{ width: 17px; height: 17px; }
 
-    .wa-ico{
-      width: 18px; height: 18px;
-      flex: 0 0 auto;
-      display:block;
-    }
-    .wa-text{
-      line-height: 1.05;
-      font-size: .92rem;
-    }
-    .wa-sub{
-      display:block;
-      font-size: .74rem;
-      font-weight: 800;
-      opacity: .88;
-      margin-top: 2px;
-    }
-
-    /* tremular leve (não “pula” conteúdo) */
-    @keyframes waPulse{
-      0%, 78%, 100% { transform: translateY(0); }
-      82% { transform: translateY(-1px); }
-      86% { transform: translateY(0); }
-      90% { transform: translateY(-1px); }
-      94% { transform: translateY(0); }
-      97% { transform: translateY(-1px); }
-    }
-
-    /* Responsive */
     @media (max-width: 940px){
       .frame{
         height:auto;
@@ -371,6 +370,10 @@
         min-height: 44vh;
         border-left: none;
         border-top: 1px solid var(--stroke);
+      }
+      .wa-on-photo{
+        top: 14px;
+        right: 14px;
       }
     }
   </style>
@@ -419,11 +422,11 @@
           NÃO É SÓ LIMPAR O NOME! É CHEGAR NO RESULTADO!
         </div>
 
-        <!-- CTA agora em uma área dedicada, SEM sobrepor -->
+        <!-- CTA sem sobrepor -->
         <div class="cta-row">
           <a
             class="wa-btn"
-            id="waBtn"
+            id="waBtnLeft"
             href="https://wa.me/5561984301988?text=Ol%C3%A1%2C%20quero%20avan%C3%A7ar%20na%20Jornada%20do%20Cr%C3%A9dito%20com%20a%20Sena%20%26%20Caetano."
             target="_blank"
             rel="noopener"
@@ -448,6 +451,25 @@
       </div>
 
       <aside class="media" aria-label="Foto Sena & Caetano">
+        <!-- Botão acima da foto -->
+        <a
+          class="wa-btn wa-on-photo"
+          id="waBtnPhoto"
+          href="https://wa.me/5561984301988?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20e%20quero%20falar%20com%20voc%C3%AAs."
+          target="_blank"
+          rel="noopener"
+          aria-label="Falar no WhatsApp (na foto)"
+        >
+          <svg class="wa-ico" viewBox="0 0 32 32" aria-hidden="true">
+            <path fill="#062016" d="M16 3C9.4 3 4 8.2 4 14.6c0 2.5.8 4.8 2.2 6.8L5 29l7.8-1.9c1.9 1 4.1 1.5 6.2 1.5 6.6 0 12-5.2 12-11.6S22.6 3 16 3zm0 23.4c-2 0-3.9-.5-5.6-1.5l-.4-.2-4.6 1.1 1.1-4.4-.3-.5c-1.2-1.8-1.9-3.9-1.9-6.1C4.3 9.2 9.3 4.7 16 4.7s11.7 4.5 11.7 10.1S22.7 26.4 16 26.4z"/>
+            <path fill="#062016" d="M22.2 18.5c-.3-.1-1.9-.9-2.2-1s-.6-.1-.8.2-.9 1-1.1 1.2-.4.2-.7.1c-.3-.1-1.3-.5-2.5-1.5-.9-.8-1.5-1.7-1.7-2s0-.5.2-.6c.2-.2.3-.4.5-.6.1-.2.2-.4.3-.6.1-.2 0-.4 0-.6s-.8-1.9-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.9 5 .8.3 1.4.5 1.9.6.8.2 1.5.2 2 .1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.3.2-1.5-.1-.2-.3-.2-.6-.3z"/>
+          </svg>
+          <span class="wa-text">
+            WHATSAPP
+            <span class="wa-sub">chamar agora</span>
+          </span>
+        </a>
+
         <!-- Troque o src se você usar outro caminho/arquivo -->
         <img class="photo" src="./assets/img/hero-casal.jpg" alt="Sena & Caetano (foto do casal)" />
 
@@ -464,18 +486,29 @@
   </main>
 
   <script>
-    (function(){
-      var btn = document.getElementById("waBtn");
-      if(!btn) return;
+    function trackWhatsAppClick(placement){
+      try{
+        if (typeof fbq === "function") {
+          fbq("trackCustom", "WhatsApp_Click", {
+            channel: "whatsapp",
+            placement: placement,
+            page: "onefold_white"
+          });
+          fbq("track", "Contact", { channel: "whatsapp", placement: placement });
+        }
+      } catch(e) {}
+    }
 
-      btn.addEventListener("click", function(){
-        try{
-          if (typeof fbq === "function") {
-            fbq("trackCustom", "WhatsApp_Click", { channel: "whatsapp", page: "onefold_white" });
-            fbq("track", "Contact", { channel: "whatsapp" });
-          }
-        } catch(e) {}
-      }, { passive: true });
+    (function(){
+      var left = document.getElementById("waBtnLeft");
+      var photo = document.getElementById("waBtnPhoto");
+
+      if(left){
+        left.addEventListener("click", function(){ trackWhatsAppClick("left_cta"); }, { passive:true });
+      }
+      if(photo){
+        photo.addEventListener("click", function(){ trackWhatsAppClick("photo_cta"); }, { passive:true });
+      }
     })();
   </script>
 </body>
