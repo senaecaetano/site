@@ -1,515 +1,427 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sena & Caetano — Jornada do Crédito</title>
-  <meta name="description" content="Uma dobra: foto do casal + mensagem central da Jornada do Crédito + CTA WhatsApp." />
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>Oferta Especial - Nome Limpo</title>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet" />
-
-  <!-- ========= META PIXEL ========= -->
-  <script>
-    !(function (f, b, e, v, n, t, s) {
-      if (f.fbq) return;
-      n = f.fbq = function () {
-        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-      };
-      if (!f._fbq) f._fbq = n;
-      n.push = n;
-      n.loaded = !0;
-      n.version = "2.0";
-      n.queue = [];
-      t = b.createElement(e);
-      t.async = !0;
-      t.src = "https://connect.facebook.net/en_US/fbevents.js";
-      s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s);
-    })(window, document, "script");
-    fbq("init", "1168676065407223");
-    fbq("track", "PageView");
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1168676065407223&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- ========= FIM META PIXEL ========= -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@300;500;700&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
-    :root{
-      /* White background theme */
-      --page:#ffffff;
-      --ink:#0b1220;
-      --muted: rgba(11,18,32,.72);
+    :root {
+      --bg-dark: #020617;
+      --blue-1: #0052ff;
+      --blue-2: #001e7a;
+      --blue-3: #00061a;
 
-      --stroke: rgba(11,18,32,.10);
-
-      --accent:#B8872C;
-      --accent2:#5B63FF;
-      --ok:#16a34a;
-
-      --shadow: 0 14px 34px rgba(11,18,32,.14);
-      --radius: 18px;
-
-      --wa:#25D366;
-      --waDark:#128C7E;
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+      --safe-left: env(safe-area-inset-left, 0px);
+      --safe-right: env(safe-area-inset-right, 0px);
     }
 
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--ink);
-      background: var(--page);
+    * {
+      box-sizing: border-box;
     }
 
-    .wrap{
-      min-height:100vh;
-      padding: clamp(14px, 2vw, 18px);
-      display:flex;
-      justify-content:center;
-      align-items:stretch;
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      scroll-behavior: smooth;
     }
 
-    .frame{
-      width:min(1180px, 100%);
-      height:calc(100vh - (2 * clamp(14px, 2vw, 18px)));
-      border-radius: 22px;
-      border: 1px solid var(--stroke);
-      background:
-        radial-gradient(900px 500px at 14% 12%, rgba(91,99,255,.10), transparent 55%),
-        radial-gradient(900px 500px at 86% 22%, rgba(184,135,44,.10), transparent 55%),
-        linear-gradient(180deg, #fff, #fbfbfd);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      display:grid;
-      grid-template-columns: 1.18fr .82fr;
-      position: relative;
-    }
-
-    /* Left */
-    .content{
-      padding: clamp(16px, 2.4vw, 24px);
-      display:flex;
-      flex-direction:column;
-      gap: 10px;
-      min-width:0;
-    }
-
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 7px 11px;
-      border-radius: 999px;
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.78);
-      width: fit-content;
-      font-weight: 800;
-      font-size: 0.84rem;
-      color: rgba(11,18,32,.92);
-      backdrop-filter: blur(6px);
-    }
-    .dot{
-      width:10px;height:10px;border-radius:999px;
-      background: var(--ok);
-      box-shadow: 0 0 0 4px rgba(22,163,74,.12);
-      flex:0 0 auto;
-    }
-
-    h1{
-      font-family: "Playfair Display", serif;
+    body {
       margin: 0;
-      line-height: 1.02;
-      letter-spacing: .01em;
-      font-size: clamp(1.45rem, 1.7vw + 1rem, 2.6rem);
-      text-wrap: balance;
-    }
-    .hl{ color: var(--accent2); }
-
-    .subtitle{
-      margin:0;
-      color: var(--muted);
-      font-size: clamp(.92rem, .35vw + .78rem, 1.02rem);
-      line-height: 1.35;
-      max-width: 64ch;
+      font-family: "Poppins", sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(0, 82, 255, 0.12), transparent 35%),
+        var(--bg-dark);
+      color: #fff;
     }
 
-    .block{
-      margin-top: 6px;
-      border-radius: var(--radius);
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.82);
-      padding: 12px 12px;
-      box-shadow: 0 10px 22px rgba(11,18,32,.06);
+    .font-title {
+      font-family: "Oswald", sans-serif;
     }
 
-    .block-title{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 10px;
-      margin-bottom: 8px;
-      font-weight: 900;
-      letter-spacing: .08em;
-      font-size: .74rem;
-      text-transform: uppercase;
-      color: rgba(11,18,32,.86);
+    .page-shell {
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding:
+        max(12px, var(--safe-top))
+        max(12px, var(--safe-right))
+        max(12px, var(--safe-bottom))
+        max(12px, var(--safe-left));
     }
 
-    .pill{
-      font-weight: 900;
-      padding: 5px 9px;
-      border-radius: 999px;
-      border: 1px solid var(--stroke);
-      background: linear-gradient(135deg, rgba(184,135,44,.12), rgba(91,99,255,.10));
-      color: rgba(11,18,32,.82);
-      letter-spacing: .03em;
-      font-size: .72rem;
-      white-space: nowrap;
-    }
-
-    ul{
-      margin:0;
-      padding-left: 16px;
-      display:grid;
-      gap: 5px;
-      color: rgba(11,18,32,.86);
-      font-weight: 650;
-      font-size: clamp(.88rem, .25vw + .78rem, .98rem);
-      line-height: 1.18;
-    }
-
-    li strong{ color: var(--accent); }
-
-    .warning{
-      margin-top: 8px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(184,135,44,.28);
-      background: linear-gradient(135deg, rgba(184,135,44,.16), rgba(255,255,255,.72));
-      padding: 10px 12px;
-      color: rgba(11,18,32,.90);
-      font-weight: 900;
-      font-size: clamp(.90rem, .28vw + .76rem, .99rem);
-      line-height: 1.25;
-    }
-    .warning span{
-      color: rgba(11,18,32,.92);
-      background: rgba(184,135,44,.18);
-      border: 1px solid rgba(184,135,44,.28);
-      padding: 2px 9px;
-      border-radius: 999px;
-      font-weight: 900;
-      margin-right: 8px;
-      display:inline-block;
-    }
-
-    .cta-row{
-      margin-top: 8px;
-      display:flex;
-      justify-content:flex-start;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    /* WhatsApp buttons */
-    .wa-btn{
-      display:inline-flex;
-      align-items:center;
-      gap: 10px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(18,140,126,.25);
-      background: linear-gradient(135deg, rgba(37,211,102,.95), rgba(18,140,126,.92));
-      color: #062016;
-      text-decoration: none;
-      font-weight: 900;
-      box-shadow: 0 12px 22px rgba(11,18,32,.12);
-      transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
-      user-select: none;
-      white-space: nowrap;
-      animation: waPulse 3s ease-in-out infinite;
-    }
-    .wa-btn:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 16px 28px rgba(11,18,32,.16);
-      filter: saturate(1.05);
-    }
-    .wa-ico{ width: 18px; height: 18px; flex:0 0 auto; display:block; }
-    .wa-text{ line-height: 1.05; font-size: .92rem; }
-    .wa-sub{
-      display:block;
-      font-size: .74rem;
-      font-weight: 800;
-      opacity: .88;
-      margin-top: 2px;
-    }
-
-    @keyframes waPulse{
-      0%, 78%, 100% { transform: translateY(0); }
-      82% { transform: translateY(-1px); }
-      86% { transform: translateY(0); }
-      90% { transform: translateY(-1px); }
-      94% { transform: translateY(0); }
-      97% { transform: translateY(-1px); }
-    }
-
-    .result{
-      margin-top: auto;
-      border-radius: var(--radius);
-      border: 1px solid rgba(91,99,255,.20);
-      background: linear-gradient(135deg, rgba(91,99,255,.10), rgba(255,255,255,.82));
-      padding: 12px 12px;
-      box-shadow: 0 10px 22px rgba(11,18,32,.06);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .result .label{
-      font-weight: 900;
-      letter-spacing: .10em;
-      text-transform: uppercase;
-      font-size: .74rem;
-      color: rgba(11,18,32,.78);
-      display:flex; gap: 8px; align-items:center;
-      margin:0;
-    }
-    .bar{
-      width:10px; height:10px; border-radius: 3px;
-      background: var(--accent2);
-      box-shadow: 0 0 0 4px rgba(91,99,255,.12);
-      flex:0 0 auto;
-    }
-    .result .big{
-      margin:0;
-      font-weight: 900;
-      font-size: clamp(1.0rem, .55vw + .86rem, 1.22rem);
-      line-height: 1.15;
-      color: rgba(11,18,32,.94);
-    }
-    .result .big em{ font-style: normal; color: var(--accent); }
-
-    /* Right media */
-    .media{
+    .flyer-card {
       position: relative;
-      border-left: 1px solid var(--stroke);
-      background: linear-gradient(180deg, rgba(11,18,32,.03), rgba(11,18,32,.01));
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-      padding: 12px;
+      width: 100%;
+      max-width: 430px;
+      min-height: calc(100dvh - 24px);
+      background: radial-gradient(
+        circle at 50% 28%,
+        var(--blue-1) 0%,
+        var(--blue-2) 55%,
+        var(--blue-3) 100%
+      );
+      overflow: hidden;
+      isolation: isolate;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+      display: flex;
+      flex-direction: column;
     }
 
-    .photo{
-      width:100%;
-      height:100%;
-      object-fit: contain;
-      object-position: center;
-      border-radius: 18px;
-      background: rgba(11,18,32,.04);
-      padding: 10px;
-      box-shadow: 0 12px 30px rgba(11,18,32,.14);
+    .flyer-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(255,255,255,0.08), transparent 20%),
+        radial-gradient(circle at 50% 20%, rgba(255,255,255,0.10), transparent 30%);
+      pointer-events: none;
+      z-index: 0;
     }
 
-    .badge{
-      position:absolute;
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
-      padding: 9px 11px;
-      border-radius: 14px;
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.82);
-      backdrop-filter: blur(8px);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 10px;
-      font-weight: 800;
-      color: rgba(11,18,32,.88);
-      font-size: .84rem;
+    @media (min-width: 431px) {
+      .flyer-card {
+        min-height: min(860px, calc(100dvh - 40px));
+        border-radius: 28px;
+      }
     }
-    .badge small{ font-weight: 700; color: rgba(11,18,32,.62); }
 
-    /* WhatsApp button above the photo (overlay, but in a safe area) */
-    .wa-on-photo{
-      position:absolute;
-      top: 18px;
-      right: 18px;
-      z-index: 20;
-      padding: 9px 11px;        /* um pouco menor na foto */
-      border-radius: 14px;
-      border: 1px solid rgba(18,140,126,.22);
-      background: rgba(255,255,255,.86);
-      color: rgba(11,18,32,.92);
-      box-shadow: 0 10px 20px rgba(11,18,32,.12);
-      animation: waPulse 3s ease-in-out infinite;
+    @media (max-height: 760px) {
+      .flyer-card {
+        min-height: calc(100dvh - 16px);
+      }
     }
-    .wa-on-photo:hover{
+
+    .content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding:
+        clamp(18px, 3.6vw, 30px)
+        clamp(16px, 4vw, 24px)
+        calc(clamp(16px, 3vw, 24px) + var(--safe-bottom));
+    }
+
+    .hero-copy {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .main-title {
+      margin: 0;
+      line-height: 0.98;
+      letter-spacing: 0.02em;
+      font-size: clamp(2.2rem, 7.8vw, 3.4rem);
+      text-shadow: 0 8px 18px rgba(0, 0, 0, 0.32);
+    }
+
+    .main-title .subtitle {
+      display: inline-block;
+      margin-top: 0.35rem;
+      font-size: clamp(1.15rem, 4.1vw, 1.9rem);
+      color: #bcd3ff;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    .offer-copy {
+      width: 100%;
+      max-width: 340px;
+      color: #ffffff;
+    }
+
+    .offer-copy p {
+      margin: 0;
+    }
+
+    .offer-primary {
+      font-size: clamp(1rem, 3.8vw, 1.18rem);
+      line-height: 1.45;
+      font-weight: 300;
+    }
+
+    .offer-discount {
+      margin-top: 0.2rem;
+      font-size: clamp(1rem, 3.8vw, 1.15rem);
+      line-height: 1.45;
+      font-weight: 300;
+    }
+
+    .offer-discount strong {
+      color: #facc15;
+      font-size: clamp(1.6rem, 6vw, 2.2rem);
+      font-weight: 700;
+      text-shadow: 0 4px 12px rgba(250, 204, 21, 0.18);
+    }
+
+    .bonus-badge {
+      display: inline-block;
+      margin-top: clamp(12px, 2vw, 18px);
+      padding: 0.75rem 1.2rem;
+      border-radius: 999px;
+      background: #db2777;
+      color: #fff;
+      font-weight: 700;
+      font-size: clamp(0.9rem, 3.2vw, 1.05rem);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transform: rotate(-2deg);
+      box-shadow: 0 8px 22px rgba(219, 39, 119, 0.35);
+      border: 1px solid rgba(244, 114, 182, 0.7);
+      max-width: 100%;
+    }
+
+    .validity {
+      margin-top: clamp(10px, 2vw, 16px);
+      display: inline-block;
+      font-size: clamp(0.72rem, 2.7vw, 0.84rem);
+      color: #bfd7ff;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.95;
+      border-bottom: 1px solid rgba(59, 130, 246, 0.45);
+      padding-bottom: 0.25rem;
+    }
+
+    .visual-zone {
+      position: relative;
+      flex: 1;
+      min-height: clamp(300px, 42vh, 470px);
+      margin-top: clamp(18px, 3vw, 28px);
+      margin-bottom: clamp(100px, 14vh, 130px);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .arch-frame,
+    .image-shell {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+    }
+
+    .arch-frame {
+      width: min(92%, 360px);
+      height: 100%;
+      border: 2.5px solid rgba(255, 255, 255, 0.95);
+      border-radius: 5.2rem 5.2rem 0 0;
+      pointer-events: none;
+      opacity: 0.92;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+      z-index: 2;
+    }
+
+    .image-shell {
+      width: min(89%, 348px);
+      height: calc(100% - 6px);
+      border-radius: 5rem 5rem 0 0;
+      overflow: hidden;
+      z-index: 1;
+      background: #082f95;
+    }
+
+    .image-shell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      opacity: 0.96;
+    }
+
+    .image-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, #00061a 8%, rgba(0, 6, 26, 0.52) 34%, transparent 68%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .cta-wrap {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: calc(clamp(16px, 3vw, 24px) + var(--safe-bottom));
+      z-index: 4;
+      padding-inline: clamp(14px, 4vw, 24px);
+      display: flex;
+      justify-content: center;
+    }
+
+    .cta-button {
+      width: 100%;
+      max-width: 320px;
+      min-height: 58px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 0.95rem 1.25rem;
+      border-radius: 999px;
+      background: #25d366;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: clamp(1rem, 3.8vw, 1.18rem);
+      box-shadow: 0 10px 24px rgba(37, 211, 102, 0.28);
+      transition:
+        transform 0.18s ease,
+        background 0.18s ease,
+        box-shadow 0.18s ease;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .cta-button:hover {
+      background: #20b858;
       transform: translateY(-1px);
-      box-shadow: 0 14px 26px rgba(11,18,32,.16);
-      filter: saturate(1.05);
+      box-shadow: 0 14px 28px rgba(37, 211, 102, 0.32);
     }
-    .wa-on-photo .wa-sub{ opacity:.78; }
-    .wa-on-photo .wa-ico{ width: 17px; height: 17px; }
 
-    @media (max-width: 940px){
-      .frame{
-        height:auto;
-        min-height: calc(100vh - (2 * clamp(14px, 2vw, 18px)));
-        grid-template-columns: 1fr;
+    .cta-button:active {
+      transform: scale(0.985);
+    }
+
+    .cta-button:focus-visible {
+      outline: 3px solid rgba(255, 255, 255, 0.85);
+      outline-offset: 3px;
+    }
+
+    .cta-icon {
+      width: clamp(22px, 5vw, 28px);
+      height: clamp(22px, 5vw, 28px);
+      flex: 0 0 auto;
+    }
+
+    @media (max-width: 380px) {
+      .content {
+        padding-inline: 14px;
       }
-      .media{
-        min-height: 44vh;
-        border-left: none;
-        border-top: 1px solid var(--stroke);
+
+      .bonus-badge {
+        padding: 0.65rem 0.95rem;
+        letter-spacing: 0.05em;
       }
-      .wa-on-photo{
-        top: 14px;
-        right: 14px;
+
+      .arch-frame {
+        width: 94%;
+        border-radius: 4.2rem 4.2rem 0 0;
+      }
+
+      .image-shell {
+        width: 91%;
+        border-radius: 4rem 4rem 0 0;
+      }
+
+      .cta-button {
+        gap: 0.6rem;
+        padding-inline: 1rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .flyer-card {
+        max-width: 440px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cta-button {
+        transition: none;
+      }
+
+      .cta-button:hover,
+      .cta-button:active {
+        transform: none;
       }
     }
   </style>
 </head>
-
 <body>
-  <main class="wrap">
-    <section class="frame" role="region" aria-label="Sena & Caetano — Uma dobra">
-
+  <main class="page-shell">
+    <section class="flyer-card" aria-label="Oferta especial Nome Limpo">
       <div class="content">
-        <div class="kicker">
-          <span class="dot" aria-hidden="true"></span>
-          <span>Sena &amp; Caetano • Jornada do Crédito</span>
-        </div>
 
-        <h1>
-          TE CONDUZIMOS A SAIR DO <span class="hl">"NAMORO COMO O CRÉDITO"</span>
-          E TE LEVAMOS PARA O <span class="hl">"CASAMENTO"</span> COM ELE!
-        </h1>
+        <header class="hero-copy">
+          <h1 class="font-title main-title">
+            MÊS DA MULHER<br />
+            <span class="subtitle">&amp; DO CONSUMIDOR</span>
+          </h1>
 
-        <p class="subtitle">
-          ESTAREMOS NA PRIMEIRA FILA CELEBRANDO JUNTOS ESSA UNIÃO
-        </p>
+          <div class="offer-copy">
+            <p class="offer-primary">
+              Seu <strong>Nome Limpo</strong> em até 60 dias
+            </p>
 
-        <div class="block">
-          <div class="block-title">
-            <span>JORNADA DO CRÉDITO:</span>
-            <span class="pill">DO TRAVADO AO LIBERADO</span>
+            <p class="offer-discount">
+              com <strong>40% de desconto</strong>
+            </p>
+
+            <div class="bonus-badge">
+              Se for mulher + 10%
+            </div>
+
+            <div class="validity">
+              Válido até dia 21 de Março
+            </div>
           </div>
+        </header>
 
-          <ul>
-            <li>CONSULTORIA FINANCEIRA</li>
-            <li>DIAGNÓSTICO ASSERTIVO SOBRE O QUE ESTÁ TRAVANDO O CRÉDITO</li>
-            <li>ESTRATÉGIA PERSONALIZADA</li>
-            <li>NETWORKING ESTRATÉGICO</li>
-            <li><strong>NOME LIMPO</strong> NO SERASA SPC BOA VISTA CENPROT QUOD</li>
-            <li><strong>SCORE</strong> RESTAURADO</li>
-            <li><strong>RATING COMERCIAL</strong> CONCENTRE</li>
-            <li><strong>CAMINHO LIVRE</strong> PARA AS POSSIBILIDADES</li>
-          </ul>
+        <div class="visual-zone" aria-hidden="true">
+          <div class="arch-frame"></div>
+
+          <div class="image-shell">
+            <img
+              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80"
+              alt="Consultora Financeira"
+            />
+            <div class="image-overlay"></div>
+          </div>
         </div>
 
-        <div class="warning">
-          <span>ALERTA</span>
-          PARE DE PROCURAR SOLUÇÕES BARATAS QUE SÓ TE ILUDEM E NÃO RESOLVE!
-          NÃO É SÓ LIMPAR O NOME! É CHEGAR NO RESULTADO!
-        </div>
-
-        <!-- CTA sem sobrepor -->
-        <div class="cta-row">
+        <div class="cta-wrap">
           <a
-            class="wa-btn"
-            id="waBtnLeft"
-            href="https://wa.me/5561984301988?text=Ol%C3%A1%2C%20quero%20avan%C3%A7ar%20na%20Jornada%20do%20Cr%C3%A9dito%20com%20a%20Sena%20%26%20Caetano."
+            href="https://wa.me/5561984301988"
             target="_blank"
-            rel="noopener"
-            aria-label="Falar no WhatsApp"
+            rel="noopener noreferrer"
+            class="cta-button"
+            aria-label="Falar no WhatsApp pelo número 61 98430-1988"
           >
-            <svg class="wa-ico" viewBox="0 0 32 32" aria-hidden="true">
-              <path fill="#062016" d="M16 3C9.4 3 4 8.2 4 14.6c0 2.5.8 4.8 2.2 6.8L5 29l7.8-1.9c1.9 1 4.1 1.5 6.2 1.5 6.6 0 12-5.2 12-11.6S22.6 3 16 3zm0 23.4c-2 0-3.9-.5-5.6-1.5l-.4-.2-4.6 1.1 1.1-4.4-.3-.5c-1.2-1.8-1.9-3.9-1.9-6.1C4.3 9.2 9.3 4.7 16 4.7s11.7 4.5 11.7 10.1S22.7 26.4 16 26.4z"/>
-              <path fill="#062016" d="M22.2 18.5c-.3-.1-1.9-.9-2.2-1s-.6-.1-.8.2-.9 1-1.1 1.2-.4.2-.7.1c-.3-.1-1.3-.5-2.5-1.5-.9-.8-1.5-1.7-1.7-2s0-.5.2-.6c.2-.2.3-.4.5-.6.1-.2.2-.4.3-.6.1-.2 0-.4 0-.6s-.8-1.9-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.9 5 .8.3 1.4.5 1.9.6.8.2 1.5.2 2 .1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.3.2-1.5-.1-.2-.3-.2-.6-.3z"/>
+            <svg
+              class="cta-icon"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
             </svg>
-
-            <span class="wa-text">
-              CHAMAR NO WHATSAPP
-              <span class="wa-sub">+55 (61) 98430-1988</span>
-            </span>
+            <span>(61) 98430-1988</span>
           </a>
         </div>
-
-        <div class="result">
-          <p class="label"><span class="bar" aria-hidden="true"></span>RESULTADO</p>
-          <p class="big">RESULTADO = <em>POSSIBILIDADES REAIS DE CRÉDITO</em></p>
-        </div>
       </div>
-
-      <aside class="media" aria-label="Foto Sena & Caetano">
-        <!-- Botão acima da foto -->
-        <a
-          class="wa-btn wa-on-photo"
-          id="waBtnPhoto"
-          href="https://wa.me/5561984301988?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20e%20quero%20falar%20com%20voc%C3%AAs."
-          target="_blank"
-          rel="noopener"
-          aria-label="Falar no WhatsApp (na foto)"
-        >
-          <svg class="wa-ico" viewBox="0 0 32 32" aria-hidden="true">
-            <path fill="#062016" d="M16 3C9.4 3 4 8.2 4 14.6c0 2.5.8 4.8 2.2 6.8L5 29l7.8-1.9c1.9 1 4.1 1.5 6.2 1.5 6.6 0 12-5.2 12-11.6S22.6 3 16 3zm0 23.4c-2 0-3.9-.5-5.6-1.5l-.4-.2-4.6 1.1 1.1-4.4-.3-.5c-1.2-1.8-1.9-3.9-1.9-6.1C4.3 9.2 9.3 4.7 16 4.7s11.7 4.5 11.7 10.1S22.7 26.4 16 26.4z"/>
-            <path fill="#062016" d="M22.2 18.5c-.3-.1-1.9-.9-2.2-1s-.6-.1-.8.2-.9 1-1.1 1.2-.4.2-.7.1c-.3-.1-1.3-.5-2.5-1.5-.9-.8-1.5-1.7-1.7-2s0-.5.2-.6c.2-.2.3-.4.5-.6.1-.2.2-.4.3-.6.1-.2 0-.4 0-.6s-.8-1.9-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.9 5 .8.3 1.4.5 1.9.6.8.2 1.5.2 2 .1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.3.2-1.5-.1-.2-.3-.2-.6-.3z"/>
-          </svg>
-          <span class="wa-text">
-            WHATSAPP
-            <span class="wa-sub">chamar agora</span>
-          </span>
-        </a>
-
-        <!-- Troque o src se você usar outro caminho/arquivo -->
-        <img class="photo" src="./assets/img/hero-casal.jpg" alt="Sena & Caetano (foto do casal)" />
-
-        <div class="badge">
-          <div>
-            Sena &amp; Caetano
-            <small>Consultoria Técnica Financeira</small>
-          </div>
-          <div style="color: rgba(184,135,44,.95); font-weight: 900;">S&amp;C</div>
-        </div>
-      </aside>
-
     </section>
   </main>
-
-  <script>
-    function trackWhatsAppClick(placement){
-      try{
-        if (typeof fbq === "function") {
-          fbq("trackCustom", "WhatsApp_Click", {
-            channel: "whatsapp",
-            placement: placement,
-            page: "onefold_white"
-          });
-          fbq("track", "Contact", { channel: "whatsapp", placement: placement });
-        }
-      } catch(e) {}
-    }
-
-    (function(){
-      var left = document.getElementById("waBtnLeft");
-      var photo = document.getElementById("waBtnPhoto");
-
-      if(left){
-        left.addEventListener("click", function(){ trackWhatsAppClick("left_cta"); }, { passive:true });
-      }
-      if(photo){
-        photo.addEventListener("click", function(){ trackWhatsAppClick("photo_cta"); }, { passive:true });
-      }
-    })();
-  </script>
 </body>
 </html>
